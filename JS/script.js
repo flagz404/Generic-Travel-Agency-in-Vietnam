@@ -11,39 +11,14 @@ function moveSlides(){
     slide.style.transform = `translateY(-${slideIndex * 50}vh)`;
     slide2.style.transform = `translateY(-${slideIndex * 100}vh)`;
     adj.style.transform = `translateY(-${slideIndex * 113}%)`;
-    const slidesArray1 = [...slide.querySelectorAll('img')];
-    const slidesArray2 = [...slide2.querySelectorAll('img')];
-    const slidesArray3 = [...adj.querySelectorAll('p')];
-    if(slideIndex === 0){
-        slide.style.transition = 'none';
-        slideIndex = slidesArray1.length - 2;
-        moveSlides()
-      }
-    if(slideIndex === slidesArray1.length -1){
-        slide.style.transition = 'none';
-        slideIndex = 1;
-        moveSlides()
-      }
-    if(slideIndex === 0){
-        slide2.style.transition = 'none';
-        slideIndex = slidesArray2.length - 2;
-        moveSlides()
-      }
-    if(slideIndex === slidesArray2.length -1){
-        slide2.style.transition = 'none';
-        slideIndex = 1;
-        moveSlides()
-      }
-    if(slideIndex === 0){
-        adj.style.transition = 'none';
-        slideIndex = slidesArray3.length - 2;
-        moveSlides()
-      }
-    if(slideIndex === slidesArray3.length -1){
-        adj.style.transition = 'none';
-        slideIndex = 1;
-        moveSlides()
-      }
+}
+
+function animateSlides(){
+  slide.style.transition = `transform 2000ms ease-in-out`;
+  slide2.style.transition = `transform 2000ms ease-in-out`;
+  adj.style.transition = `transform 2000ms ease-in-out`;
+  slideIndex += 1;
+  moveSlides();
 }
 
 async function fetchImages(){
@@ -84,11 +59,27 @@ async function fetchImages(){
   }
 fetchImages()
 
+function checkSlides(){
+  const slidesArray1 = [...slide.querySelectorAll('img')];
+  const slidesArray2 = [...slide2.querySelectorAll('img')];
+  const slidesArray3 = [...adj.querySelectorAll('p')];
+  if(slideIndex === 0){
+    slide.style.transition = 'none';
+    slide2.style.transition = 'none';
+    adj.style.transition = 'none';
+    slideIndex = slidesArray1.length - 2;
+    moveSlides()
+  }
+  if(slideIndex === slidesArray1.length -1){
+    slide.style.transition = 'none';
+    slide2.style.transition = 'none';
+    adj.style.transition = 'none';
+    slideIndex = 1;
+    moveSlides()
+  }
+}
+
 setInterval(() => {
-    slide.style.transition = `transform 2000ms ease-in-out`;
-    slide2.style.transition = `transform 2000ms ease-in-out`;
-    adj.style.transition = `transform 2000ms ease-in-out`;
-    slideIndex += 1;
-    moveSlides();
-    setTimeout(() => {}, 3000)
-}, 4000);
+  animateSlides();
+  checkSlides();
+}, 10000);
