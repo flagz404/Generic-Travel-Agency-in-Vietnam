@@ -28,7 +28,7 @@ body {
     color: #1C1B1F;
     text-align: center;
     text-decoration: none;
-    font-size: 27.99px;
+    font-size: 1.7rem;
     letter-spacing: -1%;
     line-height: 100%;
     font-family: 'Degular Demo Thin';
@@ -60,12 +60,47 @@ body {
 
 .intro {
     display: grid;
-    grid-template-columns:  repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
+    grid-template-columns: repeat(2, 50vw);
+    grid-template-rows: repeat(2, 50vh);
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+}
     
-.title { grid-area: 1 / 1 / 2 / 2; }
-.img1 { grid-area: 2 / 1 / 3 / 2; }
-.img2 { grid-area: 1 / 2 / 3 / 3; }
+.title {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    outline: solid 1px #1C1B1F;
+}
+
+.img1 {
+    grid-area: 2 / 1 / 3 / 2;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    outline: solid 1px #1C1B1F;
+}
+
+.img2 {
+    grid-area: 1 / 2 / 3 / 3;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    outline: solid 1px #1C1B1F;
+}
+
+.img1 img {
+    object-fit: cover;
+    width: 50vw;
+    height: auto;
+}
+
+.img2 img {
+    object-fit: cover;
+    width: auto;
+    height: 100vh;
+}
