@@ -12,3 +12,8 @@
     font-family: 'Degular Display Demo Thin';
     src: url(/FONTS/Degular_Display/DegularDisplayDemo-Thin.otf);
 }
+
+@font-face {
+    font-family: 'Degular Demo Light';
+    src: url(/FONTS/Degular/DegularDemo-Light.otf);
+}

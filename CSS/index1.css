@@ -123,6 +123,11 @@ body {
     width: 587px;
     height: 131px;
     overflow: hidden;
+    display: inline-flex;
+}
+
+.adjectives label {
+    margin-right: 20px;
 }
 
 .adj_container {
@@ -134,3 +139,42 @@ body {
 .adj_container p {
     line-height: 101%;
 }
+
+.aboutvn {
+    padding: 33px 30px 0 30px;
+}
+
+.aboutvn_title {
+    width: 431px;
+    height: auto;
+}
+
+.aboutvn_title p {
+    font-family: 'Degular Display Demo Semibold', sans-serif;
+    font-size: 128px;
+    letter-spacing: -0.5%;
+    line-height: 90%;
+    color: #1C1B1F;
+}
+
+.aboutvn_desc {
+    width: 895px;
+    height: auto;
+}
+
+.aboutvn_desc p{
+    font-family: 'Degular Demo Light', sans-serif;
+    font-size: 36px;
+    line-height: 100%;
+    text-align: right;
+}
+
+#link {
+    font-family: 'Degular Demo Light', sans-serif;
+    font-size: 36px;
+    line-height: 100%;
+    text-align: right;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='40px' viewBox='0 -960 960 960' width='40px' fill='%231C1B1F'%3e%3cpath d='m248.74-237.38-53.28-53.29 398.12-398.12H233.37v-75.75h489.25v489.08H646.7v-360.05L248.74-237.38Z'/%3e%3c/svg%3e") no-repeat right center;
+    padding-right: 2px;
+}
+
