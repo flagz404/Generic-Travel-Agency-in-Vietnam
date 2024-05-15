@@ -141,7 +141,10 @@ body {
 }
 
 .aboutvn {
-    padding: 33px 30px 0 30px;
+    padding: 33px 30px 49px 30px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #1C1B1F;
 }
 
 .aboutvn_title {
@@ -162,19 +165,36 @@ body {
     height: auto;
 }
 
-.aboutvn_desc p{
+.desc{
     font-family: 'Degular Demo Light', sans-serif;
     font-size: 36px;
     line-height: 100%;
     text-align: right;
+}
+
+
+#link:hover {
+    text-decoration: underline;
+    color: #1C1B1F;
 }
 
 #link {
-    font-family: 'Degular Demo Light', sans-serif;
+    font-family: 'Degular Demo Semibold', sans-serif;
     font-size: 36px;
     line-height: 100%;
     text-align: right;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='40px' viewBox='0 -960 960 960' width='40px' fill='%231C1B1F'%3e%3cpath d='m248.74-237.38-53.28-53.29 398.12-398.12H233.37v-75.75h489.25v489.08H646.7v-360.05L248.74-237.38Z'/%3e%3c/svg%3e") no-repeat right center;
-    padding-right: 2px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='40px' viewBox='0 -960 960 960' width='40px' fill='%231C1B1F'%3e%3cpath d='m248.74-237.38-53.28-53.29 398.12-398.12H233.37v-75.75h489.25v489.08H646.7v-360.05L248.74-237.38Z'/%3e%3c/svg%3e") no-repeat right bottom;
+    padding-right: 40px;
+    color: #1C1B1F;
+    text-decoration: none;
+    position: sticky;
+    margin-left: 8px;
 }
 
+.line_with_link {
+    display: flex;
+}
+
+.line_with_link label {
+    white-space: nowrap;
+}
