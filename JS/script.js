@@ -94,3 +94,4 @@ mute.addEventListener('click', () => {
   console.log(video.muted);
   mute_stat.classList.toggle('mute_status_false')
 })
+

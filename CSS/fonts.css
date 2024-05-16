@@ -22,3 +22,8 @@
     font-family: 'Degular Mono Demo Light';
     src: url("./FONTS/Degular_Mono/DegularMonoDemo-Light.otf");
 }
+
+@font-face {
+    font-family: 'Degular Display Demo Regular';
+    src: url("./FONTS/Degular_Display/DegularDisplayDemo-Regular");
+}
