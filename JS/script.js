@@ -4,6 +4,9 @@ const adj = document.querySelector('.adj_container')
 const mute_stat = document.querySelector('.mute_status_true')
 const mute = document.querySelector('.mute')
 const video = document.querySelector('.video')
+const plcards = document.querySelector('.p_l_content')
+let cardIndex = 1;
+let isMoving = true;
 let slideIndex = 1;
 
 function processImages(item){
@@ -95,3 +98,83 @@ mute.addEventListener('click', () => {
   mute_stat.classList.toggle('mute_status_false')
 })
 
+function processPLCards(item){
+  return `<div class="p_l_card"><img src="${item.url}" alt="${item.alt}"><div><p>Photo by <a href="${item.artist}" class="credits2" target="_blank">${item.artist_name}</a> on <a href="${item.img_src}" class="credits2" target="_blank">Unsplash</a></p></div><a href="${item.location_link}" class="p_l_link">${item.location}</a></div>`;
+}
+
+function moveCards(){
+  plcards.style.transform = `translateX(-${cardIndex * 565}px)`;
+}
+
+function moveHandler(direction){
+  isMoving = true;
+  plcards.style.transition = `transform 450ms ease-in-out`;
+  direction === 'right' ? (cardIndex += 1) : (cardIndex -= 1);
+  moveCards();
+}
+
+async function fetchPLCards(){
+  await fetch('./JSON/plcards.json')
+    .then((response) => {
+      if(!response.ok){
+        throw new Error('Network response is not okaying');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      data.push(data[0]);
+      data.unshift(data[data.length - 2]);
+      console.log(data)
+      plcards.innerHTML = data.map(processPLCards).join('');
+    moveCards();
+    })
+    .catch((error) => {
+      console.error('Fetch operation is not fetching, might be a typo in the js script', error);
+    })
+}
+fetchPLCards()
+
+window.addEventListener('keyup', e => {
+  if(isMoving){
+    return;
+  }
+  switch (e.key){
+    case 'ArrowLeft':
+      moveHandler()
+      break;
+    case 'ArrowRight':
+      moveHandler('right')
+      break;
+    default:
+      break;
+  }
+})
+
+document.querySelector('.p_l_right').addEventListener('click', () => {
+  if(isMoving){
+    return;
+  }
+  moveHandler('right');
+})
+
+document.querySelector('.p_l_left').addEventListener('click', () => {
+  if(isMoving){
+    return;
+  }
+  moveHandler();
+})
+
+plcards.addEventListener('transitionend', () => {
+  isMoving = false;
+  const cardsArray = [...slide.querySelectorAll('div.p_l_card')];
+  if(cardIndex === 0){
+    plcards.style.transition = 'none';
+    cardIndex = cardsArray.length - 2;
+    moveCards()
+  }
+  if(cardIndex === cardsArray.length -1){
+    plcards.style.transition = 'none';
+    cardIndex = 1;
+    moveCards()
+  }
+})

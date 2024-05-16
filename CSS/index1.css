@@ -141,7 +141,7 @@ body {
 }
 
 .adj_container p {
-    line-height: 101%;
+    line-height: 100%;
 }
 
 .aboutvn {
@@ -263,6 +263,7 @@ body {
 
 .p_l_title p {
     margin-left: 30px;
+    margin-bottom: 3px;
 }
 
 .p_l_slider {
@@ -277,6 +278,7 @@ body {
     height: 676px;
     background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cmask id='mask0_116_13' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='48' height='48'%3e%3crect width='48' height='48' fill='%23D9D9D9'/%3e%3c/mask%3e%3cg mask='url(%23mask0_116_13)'%3e%3cpath d='M32.75 44L12.75 24L32.75 4L35.55 6.85L18.4 24L35.55 41.15L32.75 44Z' fill='%231C1B1F'/%3e%3c/g%3e%3c/svg%3e") no-repeat center center #F8F8E6;
     cursor: pointer;
+    position: relative;
 }
 
 .p_l_right {
@@ -287,12 +289,16 @@ body {
     height: 676px;
     background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='48px' viewBox='0 -960 960 960' width='48px' fill='%231C1B1F'%3e%3cpath d='m304-82-56-57 343-343-343-343 56-57 400 400L304-82Z'/%3e%3c/svg%3e") no-repeat center center #F8F8E6;
     cursor: pointer;
+    position: relative;
 }
 
 .p_l_content {
-    width: calc(100vw - 222px);
     height: auto;
     display: flex;
+}
+
+.p_l_container {
+    width: calc(100vw - 222px);
     overflow: hidden;
 }
 
@@ -303,10 +309,40 @@ body {
     border-right: solid 1px #1C1B1F;
 }
 
+.p_l_card div {
+    width: fit-content;
+    position: relative;
+    background-color: #F8F8E6;
+    margin-top: -38px;
+    margin-left: -1px;
+    padding: 10px;
+    border: solid 1px #1C1B1F;
+}
+
+.p_l_card div p {
+    position: relative;
+    font-family: 'Degular Mono Demo Light', monospace;
+    line-height: 100%;
+    color: #1C1B1F;
+}
+
+.credits2 {
+    letter-spacing: -1%;
+    color: #1C1B1F;
+    padding-right: 24px;
+    text-decoration: none;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='20px' viewBox='0 -960 960 960' width='20px' fill='%231C1B1F'%3e%3cpath d='m248.74-237.38-53.28-53.29 398.12-398.12H233.37v-75.75h489.25v489.08H646.7v-360.05L248.74-237.38Z'/%3e%3c/svg%3e") no-repeat right bottom;
+}
+
+.credits2:hover {
+    text-decoration: underline;
+}
+
 .p_l_card img {
     width: 565px;
     height: 606px;
     object-fit: cover;
+    border-bottom: solid 1px #1C1B1F;
 }
 
 .p_l_link:hover {
