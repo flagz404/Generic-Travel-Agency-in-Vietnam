@@ -1,6 +1,9 @@
 const slide = document.querySelector('.img1_container')
 const slide2 = document.querySelector('.img2_container')
 const adj = document.querySelector('.adj_container')
+const mute_stat = document.querySelector('.mute_status_true')
+const mute = document.querySelector('.mute')
+const video = document.querySelector('.video')
 let slideIndex = 1;
 
 function processImages(item){
@@ -22,7 +25,7 @@ function animateSlides(){
 }
 
 async function fetchImages(){
-    await fetch('images1.json')
+    await fetch('./JSON/images1.json')
       .then((response) => {
         if(!response.ok){
           throw new Error('Network response is not okaying');
@@ -39,7 +42,7 @@ async function fetchImages(){
       .catch((error) => {
         console.error('Fetch operation is not fetching, might be a typo in the js script', error);
       })
-      await fetch('images2.json')
+      await fetch('./JSON/images2.json')
       .then((response) => {
         if(!response.ok){
           throw new Error('Network response is not okaying');
@@ -68,6 +71,8 @@ function checkSlides(){
     slide2.style.transition = 'none';
     adj.style.transition = 'none';
     slideIndex = slidesArray1.length - 2;
+    slideIndex = slidesArray2.length - 2;
+    slideIndex = slidesArray3.length - 2;
     moveSlides()
   }
   if(slideIndex === slidesArray1.length -1){
@@ -83,3 +88,9 @@ setInterval(() => {
   animateSlides();
   checkSlides();
 }, 10000);
+
+mute.addEventListener('click', () => {
+  video.muted = !video.muted;
+  console.log(video.muted);
+  mute_stat.classList.toggle('mute_status_false')
+})

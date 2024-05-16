@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #F8F8E6;
 }
@@ -197,4 +201,51 @@ body {
 
 .line_with_link label {
     white-space: nowrap;
+}
+
+video {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.mute {
+    padding: 8px;
+    border: none;
+    border-radius: 100%;
+    background-color: #F8F8E6;
+    cursor: pointer;
+    margin: -70px 30px 30px 30px;
+    position: relative;
+    float: right;
+}
+
+.mute_status_true.mute_status_false {
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%231C1B1F'%3e%3cpath d='M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320ZM400-606l-86 86H200v80h114l86 86v-252ZM300-480Z'/%3e%3c/svg%3e") !important;
+}
+
+.mute_status_true {
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%231C1B1F'%3e%3cpath d='m616-320-56-56 104-104-104-104 56-56 104 104 104-104 56 56-104 104 104 104-56 56-104-104-104 104Zm-496-40v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z'/%3e%3c/svg%3e");
+}
+
+.BD {
+    margin: -51px 30px 30px 30px;
+}
+
+.BD a {
+    position: relative;
+    font-family: 'Degular Mono Demo Light', monospace;
+    line-height: 100%;
+    letter-spacing: -1%;
+    color: #F8F8E6;
+    text-decoration: none;
+    padding-right: 24px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='20px' viewBox='0 -960 960 960' width='20px' fill='%23F8F8E6'%3e%3cpath d='m248.74-237.38-53.28-53.29 398.12-398.12H233.37v-75.75h489.25v489.08H646.7v-360.05L248.74-237.38Z'/%3e%3c/svg%3e") no-repeat right bottom;
+}
+
+.BD a:hover {
+    text-decoration: underline;
 }
