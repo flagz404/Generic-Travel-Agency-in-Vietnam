@@ -6,7 +6,7 @@ const mute = document.querySelector('.mute')
 const video = document.querySelector('.video')
 const plcards = document.querySelector('.p_l_content')
 let cardIndex = 1;
-let isMoving = true;
+let isMoving = false;
 let slideIndex = 1;
 
 function processImages(item){
@@ -99,7 +99,7 @@ mute.addEventListener('click', () => {
 })
 
 function processPLCards(item){
-  return `<div class="p_l_card"><img src="${item.url}" alt="${item.alt}"><div><p>Photo by <a href="${item.artist}" class="credits2" target="_blank">${item.artist_name}</a> on <a href="${item.img_src}" class="credits2" target="_blank">Unsplash</a></p></div><a href="${item.location_link}" class="p_l_link">${item.location}</a></div>`;
+  return `<div class="p_l_card"><img src="${item.url}" alt="${item.alt}"><div><p>Photo by <a href="${item.artist}" class="credits2" target="_blank">${item.artist_name}</a></p></div><a href="${item.location_link}" class="p_l_link">${item.location}</a></div>`;
 }
 
 function moveCards(){
@@ -108,8 +108,13 @@ function moveCards(){
 
 function moveHandler(direction){
   isMoving = true;
-  plcards.style.transition = `transform 450ms ease-in-out`;
-  direction === 'right' ? (cardIndex += 1) : (cardIndex -= 1);
+  plcards.style.transition = `transform 400ms ease-in-out`;
+  if(direction === 'right'){
+    cardIndex += 1
+  }
+  else{
+    cardIndex -=1
+  }
   moveCards();
 }
 
@@ -123,7 +128,9 @@ async function fetchPLCards(){
     })
     .then((data) => {
       data.push(data[0]);
-      data.unshift(data[data.length - 2]);
+      data.push(data[1]);
+      data.push(data[2]);
+      data.unshift(data[data.length - 4]);
       console.log(data)
       plcards.innerHTML = data.map(processPLCards).join('');
     moveCards();
@@ -166,15 +173,16 @@ document.querySelector('.p_l_left').addEventListener('click', () => {
 
 plcards.addEventListener('transitionend', () => {
   isMoving = false;
-  const cardsArray = [...slide.querySelectorAll('div.p_l_card')];
-  if(cardIndex === 0){
-    plcards.style.transition = 'none';
-    cardIndex = cardsArray.length - 2;
-    moveCards()
-  }
-  if(cardIndex === cardsArray.length -1){
-    plcards.style.transition = 'none';
-    cardIndex = 1;
-    moveCards()
-  }
+    const cardsArray = [...plcards.querySelectorAll('div.p_l_card')];
+    if(cardIndex === 0){
+      plcards.style.transition = 'none';
+      cardIndex = cardsArray.length - 4;
+      console.log(cardsArray)
+      moveCards()
+    }
+    if(cardIndex === cardsArray.length - 3){
+      plcards.style.transition = 'none';
+      cardIndex = 1;
+      moveCards()
+    }
 })
