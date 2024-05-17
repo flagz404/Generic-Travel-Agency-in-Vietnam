@@ -140,15 +140,10 @@ body {
     position: relative;
     font-family: 'Degular Display Demo Semibold', sans-serif;
     transform: translateY(-5px);
-    /* transform: translateY(-516px); */
 }
 
 .adj_container p {
     line-height: 100%;
-}
-
-.adj1 {
-
 }
 
 .aboutvn {
