@@ -32,35 +32,19 @@
       "location" : "Ho Chi Minh City"
     },
     {
-      "url" : "./IMG/img11.jpg",
-      "alt" : "purple petaled near mountains at daytime",
+      "url" : "./IMG/img15.jpg",
+      "alt" : "boats docked in a harbor",
       "location_link" : "#",
-      "artist_name" : "Uriel",
-      "artist" : "https://unsplash.com/@amandegold",
-      "location" : "Sapa"
+      "artist_name" : "Norbert Braun",
+      "artist" : "https://unsplash.com/@medion4you",
+      "location" : "Hoi An"
     },
     {
-      "url" : "./IMG/img12.jpg",
-      "alt" : "white concrete building near green trees and river during daytime",
+      "url" : "./IMG/img16.jpg",
+      "alt" : "a person standing on a brick walkway in front of a building",
       "location_link" : "#",
-      "artist_name" : "Eden Constantino",
-      "artist" : "https://unsplash.com/@edenconstantin0",
-      "location" : "Hanoi"
-    },
-    {
-      "url" : "./IMG/img13.jpg",
-      "alt" : "ocean near cliff during daytime",
-      "location_link" : "#",
-      "artist_name" : "Gigi",
-      "artist" : "https://unsplash.com/@ling_gigi",
-      "location" : "Ha Long Bay"
-    },
-    {
-      "url" : "./IMG/img14.jpg",
-      "alt" : "people walking on street near brown building during daytime",
-      "location_link" : "#",
-      "artist_name" : "jet dela cruz",
-      "artist" : "https://unsplash.com/@jetjetdelacruz",
-      "location" : "Ho Chi Minh City"
+      "artist_name" : "Anh Vy",
+      "artist" : "https://unsplash.com/@anhvygor",
+      "location" : "Thua Thien Hue"
     }
 ]
