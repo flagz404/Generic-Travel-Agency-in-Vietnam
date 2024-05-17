@@ -127,21 +127,28 @@ body {
     width: 587px;
     height: 131px;
     overflow: hidden;
-    display: inline-flex;
+    display: flex;
 }
 
-.adjectives label {
+.a {
     margin-right: 20px;
 }
 
 .adj_container {
-    width: 587px;
-    height: 115px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
     font-family: 'Degular Display Demo Semibold', sans-serif;
+    transform: translateY(-5px);
+    /* transform: translateY(-516px); */
 }
 
 .adj_container p {
     line-height: 100%;
+}
+
+.adj1 {
+
 }
 
 .aboutvn {

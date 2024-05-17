@@ -7,7 +7,7 @@ const video = document.querySelector('.video')
 const plcards = document.querySelector('.p_l_content')
 let cardIndex = 1;
 let isMoving = false;
-let slideIndex = 1;
+let slideIndex = 0;
 
 function processImages(item){
     return `<img src="${item.url}" alt="${item.alt}">`;
@@ -16,15 +16,7 @@ function processImages(item){
 function moveSlides(){
     slide.style.transform = `translateY(-${slideIndex * 50}vh)`;
     slide2.style.transform = `translateY(-${slideIndex * 100}vh)`;
-    adj.style.transform = `translateY(-${slideIndex * 113}%)`;
-}
-
-function animateSlides(){
-  slide.style.transition = `transform 2000ms ease-in-out`;
-  slide2.style.transition = `transform 2000ms ease-in-out`;
-  adj.style.transition = `transform 2000ms ease-in-out`;
-  slideIndex += 1;
-  moveSlides();
+    adj.style.transform = `translateY(-${slideIndex * 129}px)`;
 }
 
 async function fetchImages(){
@@ -37,10 +29,8 @@ async function fetchImages(){
       })
       .then((data) => {
         data.push(data[0]);
-        data.unshift(data[data.length - 2]);
         console.log(data)
         slide.innerHTML = data.map(processImages).join('');
-      moveSlides();
       })
       .catch((error) => {
         console.error('Fetch operation is not fetching, might be a typo in the js script', error);
@@ -54,10 +44,8 @@ async function fetchImages(){
       })
       .then((data2) => {
         data2.push(data2[0]);
-        data2.unshift(data2[data2.length - 2]);
         console.log(data2)
         slide2.innerHTML = data2.map(processImages).join('');
-      moveSlides();
       })
       .catch((error) => {
         console.error('Fetch operation is not fetching, might be a typo in the js script', error);
@@ -67,29 +55,23 @@ fetchImages()
 
 function checkSlides(){
   const slidesArray1 = [...slide.querySelectorAll('img')];
-  const slidesArray2 = [...slide2.querySelectorAll('img')];
-  const slidesArray3 = [...adj.querySelectorAll('p')];
-  if(slideIndex === 0){
+  if(slideIndex === slidesArray1.length){
     slide.style.transition = 'none';
     slide2.style.transition = 'none';
     adj.style.transition = 'none';
-    slideIndex = slidesArray1.length - 2;
-    slideIndex = slidesArray2.length - 2;
-    slideIndex = slidesArray3.length - 2;
-    moveSlides()
-  }
-  if(slideIndex === slidesArray1.length -1){
-    slide.style.transition = 'none';
-    slide2.style.transition = 'none';
-    adj.style.transition = 'none';
-    slideIndex = 1;
+    slideIndex = 0;
     moveSlides()
   }
 }
 
 setInterval(() => {
-  animateSlides();
+  slideIndex += 1;
+  slide.style.transition = `transform 2000ms ease-in-out`;
+  slide2.style.transition = `transform 2000ms ease-in-out`;
+  adj.style.transition = `transform 2000ms ease-in-out`;
+  moveSlides();
   checkSlides();
+  console.log(slideIndex)
 }, 10000);
 
 mute.addEventListener('click', () => {
