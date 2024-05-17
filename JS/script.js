@@ -76,12 +76,11 @@ setInterval(() => {
 
 mute.addEventListener('click', () => {
   video.muted = !video.muted;
-  console.log(video.muted);
   mute_stat.classList.toggle('mute_status_false')
 })
 
 function processPLCards(item){
-  return `<div class="p_l_card"><img src="${item.url}" alt="${item.alt}"><div><p>Photo by <a href="${item.artist}" class="credits2" target="_blank">${item.artist_name}</a></p></div><a href="${item.location_link}" class="p_l_link">${item.location}</a></div>`;
+  return `<div class="p_l_card silder_card"><img src="${item.url}" alt="${item.alt}"><div><p>Photo by <a href="${item.artist}" class="credits2" target="_blank">${item.artist_name}</a></p></div><a href="${item.location_link}" class="slider_link">${item.location}</a></div>`;
 }
 
 function moveCards(){
