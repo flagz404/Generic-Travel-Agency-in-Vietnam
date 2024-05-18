@@ -1,22 +1,22 @@
 [
-    {
-      "url" : "./IMG/img6.jpg",
-      "alt" : ""
-    },
-    {
-      "url" : "./IMG/img7.jpg",
-      "alt" : ""
-    },
-    {
-      "url" : "./IMG/img8.jpg",
-      "alt" : ""
-    },
-    {
-      "url" : "./IMG/img9.jpg",
-      "alt" : ""
-    },
-    {
-      "url" : "./IMG/img10.jpg",
-      "alt" : ""
-    }
+  {
+    "url": "./IMG/img6.jpg",
+    "alt": ""
+  },
+  {
+    "url": "./IMG/img7.jpg",
+    "alt": ""
+  },
+  {
+    "url": "./IMG/img8.jpg",
+    "alt": ""
+  },
+  {
+    "url": "./IMG/img9.jpg",
+    "alt": ""
+  },
+  {
+    "url": "./IMG/img10.jpg",
+    "alt": ""
+  }
 ]

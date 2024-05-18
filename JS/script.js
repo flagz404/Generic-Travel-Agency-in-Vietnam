@@ -5,8 +5,11 @@ const mute_stat = document.querySelector('.mute_status_true')
 const mute = document.querySelector('.mute')
 const video = document.querySelector('.video')
 const plcards = document.querySelector('.p_l_content')
-let cardIndex = 1;
-let isMoving = false;
+const pecards = document.querySelector('.p_e_content')
+let PLcardIndex = 1;
+let PEcardIndex = 1;
+let isPLMoving = false;
+let isPEMoving = false;
 let slideIndex = 0;
 
 function processImages(item){
@@ -72,7 +75,7 @@ setInterval(() => {
   moveSlides();
   checkSlides();
   console.log(slideIndex)
-}, 10000);
+}, 5000);
 
 mute.addEventListener('click', () => {
   video.muted = !video.muted;
@@ -83,20 +86,20 @@ function processPLCards(item){
   return `<div class="p_l_card silder_card"><img src="${item.url}" alt="${item.alt}"><div><p>Photo by <a href="${item.artist}" class="credits2" target="_blank">${item.artist_name}</a></p></div><a href="${item.location_link}" class="slider_link">${item.location}</a></div>`;
 }
 
-function moveCards(){
-  plcards.style.transform = `translateX(-${cardIndex * 565}px)`;
+function movePLCards(){
+  plcards.style.transform = `translateX(-${PLcardIndex * 565}px)`;
 }
 
-function moveHandler(direction){
-  isMoving = true;
+function movePLHandler(direction){
+  isPLMoving = true;
   plcards.style.transition = `transform 400ms ease-in-out`;
   if(direction === 'right'){
-    cardIndex += 1
+    PLcardIndex += 1
   }
   else{
-    cardIndex -=1
+    PLcardIndex -=1
   }
-  moveCards();
+  movePLCards();
 }
 
 async function fetchPLCards(){
@@ -114,7 +117,7 @@ async function fetchPLCards(){
       data.unshift(data[data.length - 4]);
       console.log(data)
       plcards.innerHTML = data.map(processPLCards).join('');
-    moveCards();
+    movePLCards();
     })
     .catch((error) => {
       console.error('Fetch operation is not fetching, might be a typo in the js script', error);
@@ -123,15 +126,15 @@ async function fetchPLCards(){
 fetchPLCards()
 
 window.addEventListener('keyup', e => {
-  if(isMoving){
+  if(isPLMoving){
     return;
   }
   switch (e.key){
     case 'ArrowLeft':
-      moveHandler()
+      movePLHandler()
       break;
     case 'ArrowRight':
-      moveHandler('right')
+      movePLHandler('right')
       break;
     default:
       break;
@@ -139,31 +142,120 @@ window.addEventListener('keyup', e => {
 })
 
 document.querySelector('.p_l_right').addEventListener('click', () => {
-  if(isMoving){
+  if(isPLMoving){
     return;
   }
-  moveHandler('right');
+  movePLHandler('right');
 })
 
 document.querySelector('.p_l_left').addEventListener('click', () => {
-  if(isMoving){
+  if(isPLMoving){
     return;
   }
-  moveHandler();
+  movePLHandler();
 })
 
 plcards.addEventListener('transitionend', () => {
-  isMoving = false;
-    const cardsArray = [...plcards.querySelectorAll('div.p_l_card')];
-    if(cardIndex === 0){
+  isPLMoving = false;
+    const PLcardsArray = [...plcards.querySelectorAll('div.p_l_card')];
+    if(PLcardIndex === 0){
       plcards.style.transition = 'none';
-      cardIndex = cardsArray.length - 4;
-      console.log(cardsArray)
-      moveCards()
+      PLcardIndex = PLcardsArray.length - 4;
+      console.log(PLcardsArray)
+      movePLCards()
     }
-    if(cardIndex === cardsArray.length - 3){
+    if(PLcardIndex === PLcardsArray.length - 3){
       plcards.style.transition = 'none';
-      cardIndex = 1;
-      moveCards()
+      PLcardIndex = 1;
+      movePLCards()
+    }
+})
+
+function processPECards(item){
+  return `<div class="p_e_card slider_card"><img src="${item.img_src}" alt="${item.img_alt}"><div class="exp_card_desc"><div class="div1"><a href="${item.exp_link}" class="slider_link">${item.exp_name}</a><ul class="p_e_desc"><li>${item.exp_item1}</li><li>${item.exp_item2}</li><li>${item.exp_item3}</li><li>${item.exp_item4}</li></ul></div><div class="div2"><div class="p_e_price"><label><label>${item.exp_price}$</label> / night</label></div><button><p>Book</p></button></div></div></div>`;
+}
+
+function movePECards(){
+  pecards.style.transform = `translateX(-${PEcardIndex * 565}px)`;
+}
+
+function movePEHandler(direction){
+  isPEMoving = true;
+  pecards.style.transition = `transform 400ms ease-in-out`;
+  if(direction === 'right'){
+    PEcardIndex += 1
+  }
+  else{
+    PEcardIndex -=1
+  }
+  movePECards();
+}
+
+async function fetchPECards(){
+  await fetch('./JSON/pecards.json')
+    .then((response) => {
+      if(!response.ok){
+        throw new Error('Network response is not okaying');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      data.push(data[0]);
+      data.push(data[1]);
+      data.push(data[2]);
+      data.unshift(data[data.length - 4]);
+      console.log(data)
+      pecards.innerHTML = data.map(processPECards).join('');
+    movePECards();
+    })
+    .catch((error) => {
+      console.error('Fetch operation is not fetching, might be a typo in the js script', error);
+    })
+}
+fetchPECards()
+
+window.addEventListener('keyup', e => {
+  if(isPEMoving){
+    return;
+  }
+  switch (e.key){
+    case 'ArrowLeft':
+      movePEHandler()
+      break;
+    case 'ArrowRight':
+      movePEHandler('right')
+      break;
+    default:
+      break;
+  }
+})
+
+document.querySelector('.p_e_right').addEventListener('click', () => {
+  if(isPEMoving){
+    return;
+  }
+  movePEHandler('right');
+})
+
+document.querySelector('.p_e_left').addEventListener('click', () => {
+  if(isPEMoving){
+    return;
+  }
+  movePEHandler();
+})
+
+pecards.addEventListener('transitionend', () => {
+  isPEMoving = false;
+    const PEcardsArray = [...plcards.querySelectorAll('div.p_l_card')];
+    if(PEcardIndex === 0){
+      plcards.style.transition = 'none';
+      PLcardIndex = PEcardsArray.length - 4;
+      console.log(PEcardsArray)
+      movePECards()
+    }
+    if(PEcardIndex === PEcardsArray.length - 3){
+      plcards.style.transition = 'none';
+      PEcardIndex = 1;
+      movePECards()
     }
 })
