@@ -326,7 +326,7 @@ document.querySelector('.p_a_right').addEventListener('click', () => {
   if(isPAMoving){
     return;
   }
-  movePEHandler('right');
+  movePAHandler('right');
 })
 
 document.querySelector('.p_a_left').addEventListener('click', () => {
