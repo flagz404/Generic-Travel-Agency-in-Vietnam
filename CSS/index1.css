@@ -405,14 +405,14 @@ body {
     height: 404px;
 }
 
-.pop_exp_title {
+.pop_title {
     font-family: 'Degular Display Demo Regular', sans-serif;
     font-size: 51.94px;
     color: #1C1B1F;
     border-bottom: solid 1px #1C1B1F;   
 }
 
-.pop_exp_title p {
+.pop_title p {
     margin-left: 30px;
     margin-bottom: 3px;
 }
@@ -428,12 +428,12 @@ body {
     min-width: 565px;
 }
 
-.p_e_desc {
+.p_e_li {
     font-family: 'Degular Display Demo Light', sans-serif;
     font-size: 24px;
 }
 
-.exp_card_desc {
+.slider_card_desc {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 261px 51.03px;
@@ -579,4 +579,68 @@ footer {
 
 .site_map_chunk_link:hover {
     text-decoration: underline;
+}
+
+.accommodation {
+    height: 406px;
+    border-top: solid 1px #1C1B1F;
+    border-bottom: solid 1px #1C1B1F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.acm_t_n_desc {
+    display: flex;
+    flex-direction: column;
+    width: 870px;
+    margin-left: 30px;
+}
+
+.acm_title {
+    font-family: 'Degular Display Demo Semibold', sans-serif;
+    font-size: 128px;
+    line-height: 90%;
+    letter-spacing: -0.5%;
+}
+
+.acm_desc {
+    font-family: 'Degular Demo Light', sans-serif;
+    font-size: 36px;
+    line-height: 100%;
+    margin-top: 24px;
+}
+
+.acm_images {
+    display: flex;
+}
+
+.acm_images img {
+    object-fit: cover;
+    width: 300px;
+    height: 404px;
+}
+
+.acm_tag {
+    margin-left: 13px;
+    font-family: 'Degular Display Demo Regular', sans-serif;
+    font-size: 24px;
+}
+
+.acm_stars {
+    padding-right: 30px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%231C1B1F'%3e%3cpath d='m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z'/%3e%3c/svg%3e") no-repeat right center;
+}
+
+.p_a_card {
+    width: 565px;
+    min-width: 565px;
+    border-right: solid 1px #1C1B1F;
+}
+
+.p_a_card img {
+    object-fit: cover;
+    width: 565px;
+    height: 352px;
+    border-bottom: solid 1px #;
 }

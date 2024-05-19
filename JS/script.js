@@ -6,9 +6,12 @@ const mute = document.querySelector('.mute')
 const video = document.querySelector('.video')
 const plcards = document.querySelector('.p_l_content')
 const pecards = document.querySelector('.p_e_content')
+const pacards = document.querySelector('.p_a_content')
 let PLcardIndex = 1;
+let PAcardIndex = 1;
 let PEcardIndex = 1;
 let isPLMoving = false;
+let isPAMoving = false;
 let isPEMoving = false;
 let slideIndex = 0;
 
@@ -172,7 +175,7 @@ plcards.addEventListener('transitionend', () => {
 })
 
 function processPECards(item){
-  return `<div class="p_e_card slider_card"><img src="${item.img_src}" alt="${item.img_alt}"><div class="exp_card_desc"><div class="div1"><a href="${item.exp_link}" class="slider_link">${item.exp_name}</a><ul class="p_e_desc"><li>${item.exp_item1}</li><li>${item.exp_item2}</li><li>${item.exp_item3}</li><li>${item.exp_item4}</li></ul></div><div class="div2"><div class="p_e_price"><label><label>${item.exp_price}$</label> / night</label></div><button><p>Book</p></button></div></div></div>`;
+  return `<div class="p_e_card"><img src="${item.img_src}" alt="${item.img_alt}"><div class="slider_card_desc"><div class="div1"><a href="${item.exp_link}" class="slider_link">${item.exp_name}</a><ul class="p_e_li"><li>${item.exp_item1}</li><li>${item.exp_item2}</li><li>${item.exp_item3}</li><li>${item.exp_item4}</li></ul></div><div class="div2"><div class="p_e_price"><label><label>${item.exp_price}$</label> / night</label></div><button><p>Book</p></button></div></div></div>`;
 }
 
 function movePECards(){
@@ -246,16 +249,105 @@ document.querySelector('.p_e_left').addEventListener('click', () => {
 
 pecards.addEventListener('transitionend', () => {
   isPEMoving = false;
-    const PEcardsArray = [...plcards.querySelectorAll('div.p_l_card')];
+    const PEcardsArray = [...pecards.querySelectorAll('div.p_e_card')];
     if(PEcardIndex === 0){
-      plcards.style.transition = 'none';
-      PLcardIndex = PEcardsArray.length - 4;
+      pecards.style.transition = 'none';
+      PEcardIndex = PEcardsArray.length - 4;
       console.log(PEcardsArray)
       movePECards()
     }
     if(PEcardIndex === PEcardsArray.length - 3){
-      plcards.style.transition = 'none';
+      pecards.style.transition = 'none';
       PEcardIndex = 1;
       movePECards()
+    }
+})
+
+function processPACards(item){
+  return `<div class="p_a_card"><img src="${item.img_src}" alt="${item.img_alt}"><div class="slider_card_desc"><div class="div1"><a href="#" class="slider_link">${item.accommodation_name}</a><p class="acm_tag">${item.type} | <label class="acm_stars">${item.star_count}</label></p><ul class="p_e_li"><li>${item.item1}</li><li>${item.item2}</li><li>${item.item3}</li><li>${item.item4}</li></ul></div><div class="div2"><p class="p_e_price"><label>${item.price}</label> $ / night</p><button><p>Book</p></button></div></div></div>`;
+}
+
+function movePACards(){
+  pacards.style.transform = `translateX(-${PAcardIndex * 565}px)`;
+}
+
+function movePAHandler(direction){
+  isPAMoving = true;
+  pacards.style.transition = `transform 400ms ease-in-out`;
+  if(direction === 'right'){
+    PAcardIndex += 1
+  }
+  else{
+    PAcardIndex -=1
+  }
+  movePACards();
+}
+
+async function fetchPACards(){
+  await fetch('./JSON/pacards.json')
+    .then((response) => {
+      if(!response.ok){
+        throw new Error('Network response is not okaying');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      data.push(data[0]);
+      data.push(data[1]);
+      data.push(data[2]);
+      data.unshift(data[data.length - 4]);
+      console.log(data)
+      pacards.innerHTML = data.map(processPACards).join('');
+    movePACards();
+    })
+    .catch((error) => {
+      console.error('Fetch operation is not fetching, might be a typo in the js script', error);
+    })
+}
+fetchPACards()
+
+window.addEventListener('keyup', e => {
+  if(isPAMoving){
+    return;
+  }
+  switch (e.key){
+    case 'ArrowLeft':
+      movePAHandler()
+      break;
+    case 'ArrowRight':
+      movePAHandler('right')
+      break;
+    default:
+      break;
+  }
+})
+
+document.querySelector('.p_a_right').addEventListener('click', () => {
+  if(isPAMoving){
+    return;
+  }
+  movePEHandler('right');
+})
+
+document.querySelector('.p_a_left').addEventListener('click', () => {
+  if(isPAMoving){
+    return;
+  }
+  movePAHandler();
+})
+
+pacards.addEventListener('transitionend', () => {
+  isPAMoving = false;
+    const PAcardsArray = [...pacards.querySelectorAll('div.p_a_card')];
+    if(PAcardIndex === 0){
+      pacards.style.transition = 'none';
+      PAcardIndex = PAcardsArray.length - 4;
+      console.log(PAcardsArray)
+      movePACards()
+    }
+    if(PAcardIndex === PAcardsArray.length - 3){
+      pacards.style.transition = 'none';
+      PAcardIndex = 1;
+      movePACards()
     }
 })
