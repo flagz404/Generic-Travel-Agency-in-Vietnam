@@ -1,31 +1,49 @@
 @font-face {
-  font-family: "Degular Demo Thin";
-  src: url("./FONTS/Degular/DegularDemo-Thin.otf");
+  font-family: "degular_demolight";
+  src: url("../FONTS/degulardemo-light-webfont.woff2") format("woff2"),
+    url("../FONTS/degulardemo-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Degular Display Demo Semibold";
-  src: url("./FONTS/Degular_Display/DegularDisplayDemo-Semibold.otf");
+  font-family: "degular_demothin";
+  src: url("../FONTS/degulardemo-thin-webfont.woff2") format("woff2"),
+    url("../FONTS/degulardemo-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Degular Display Demo Thin";
-  src: url("./FONTS/Degular_Display/DegularDisplayDemo-Thin.otf");
+  font-family: "degular_display_demoregular";
+  src: url("../FONTS/degulardisplaydemo-regular-webfont.woff2") format("woff2"),
+    url("../FONTS/degulardisplaydemo-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Degular Demo Light";
-  src: url("./FONTS/Degular/DegularDemo-Light.otf");
+  font-family: "degular_display_demosemibold";
+  src: url("../FONTS/degulardisplaydemo-semibold-webfont.woff2") format("woff2"),
+    url("../FONTS/degulardisplaydemo-semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Degular Mono Demo Light";
-  src: url("./FONTS/Degular_Mono/DegularMonoDemo-Light.otf");
+  font-family: "degular_display_demothin";
+  src: url("../FONTS/degulardisplaydemo-thin-webfont.woff2") format("woff2"),
+    url("../FONTS/degulardisplaydemo-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Degular Display Demo Regular";
-  src: url("./FONTS/Degular_Display/DegularDisplayDemo-Regular");
+  font-family: "degular_mono_demolight";
+  src: url("../FONTS/degularmonodemo-light-webfont.woff2") format("woff2"),
+    url("../FONTS/degularmonodemo-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
@@ -66,7 +84,7 @@ body {
   font-size: 27.99px;
   letter-spacing: -1%;
   line-height: 100%;
-  font-family: "Degular Demo Thin", sans-serif;
+  font-family: "degular_demothin", sans-serif;
 }
 
 .topnav a:hover {
@@ -108,7 +126,7 @@ body {
   justify-content: center;
   padding-left: 30px;
   outline: solid 1px #1c1b1f;
-  font-family: "Degular Display Demo Thin", sans-serif;
+  font-family: "degular_display_demothin", sans-serif;
   font-size: 128px;
   letter-spacing: -0.5%;
   line-height: 90%;
@@ -169,7 +187,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  font-family: "Degular Display Demo Semibold", sans-serif;
+  font-family: "degular_display_demosemibold", sans-serif;
   transform: translateY(-5px);
 }
 
@@ -190,7 +208,7 @@ body {
 }
 
 .aboutvn_title p {
-  font-family: "Degular Display Demo Semibold", sans-serif;
+  font-family: "degular_display_demosemibold", sans-serif;
   font-size: 128px;
   letter-spacing: -0.5%;
   line-height: 90%;
@@ -203,7 +221,7 @@ body {
 }
 
 .desc {
-  font-family: "Degular Demo Light", sans-serif;
+  font-family: "degular_demolight", sans-serif;
   font-size: 36px;
   line-height: 100%;
   text-align: right;
@@ -274,7 +292,7 @@ body {
 
 .credits a {
   position: relative;
-  font-family: "Degular Mono Demo Light", monospace;
+  font-family: "degular_mono_demolight", monospace;
   line-height: 100%;
   letter-spacing: -1%;
   color: #f8f8e6;
@@ -289,7 +307,7 @@ body {
 }
 
 .p_l_title {
-  font-family: "Degular Display Demo Regular", sans-serif;
+  font-family: "degular_display_demoregular", sans-serif;
   font-size: 51.94px;
   color: #1c1b1f;
   border-bottom: solid 1px #1c1b1f;
@@ -357,7 +375,7 @@ body {
 
 .silder_card div p {
   position: relative;
-  font-family: "Degular Mono Demo Light", monospace;
+  font-family: "degular_mono_demolight", monospace;
   line-height: 100%;
   color: #1c1b1f;
 }
@@ -417,14 +435,14 @@ body {
 }
 
 .exp_title {
-  font-family: "Degular Display Demo Semibold", sans-serif;
+  font-family: "degular_display_demosemibold", sans-serif;
   font-size: 128px;
   line-height: 90%;
   letter-spacing: -0.5%;
 }
 
 .exp_desc {
-  font-family: "Degular Demo Light", sans-serif;
+  font-family: "degular_demolight", sans-serif;
   font-size: 36px;
   line-height: 100%;
   margin-top: 24px;
@@ -441,7 +459,7 @@ body {
 }
 
 .pop_title {
-  font-family: "Degular Display Demo Regular", sans-serif;
+  font-family: "degular_display_demoregular", sans-serif;
   font-size: 51.94px;
   color: #1c1b1f;
   border-bottom: solid 1px #1c1b1f;
@@ -521,7 +539,7 @@ body {
 }
 
 .p_e_price {
-  font-family: "Degular Display Demo Regular", sans-serif;
+  font-family: "degular_display_demoregular", sans-serif;
   font-size: 28px;
   color: #1c1b1f;
 }
@@ -538,7 +556,7 @@ footer {
 .footer1 {
   grid-area: 1 / 1 / 2 / 2;
   border-right: solid 1px #1c1b1f;
-  padding: 18.4px 0 18px 30px;
+  padding: 18.4px 0 18px 18px;
 }
 
 .footer1 img {
@@ -559,14 +577,14 @@ footer {
 }
 
 .footer2 p {
-  font-family: "Degular Mono Demo Light", monospace;
+  font-family: "degular_mono_demolight", monospace;
   font-size: 24px;
   letter-spacing: -8%;
   color: #1c1b1f70;
 }
 
 .footer2 p a {
-  font-family: "Degular Mono Demo Light", monospace;
+  font-family: "degular_mono_demolight", monospace;
   font-size: 24px;
   letter-spacing: -8%;
   color: #1c1b1f70;
@@ -637,14 +655,14 @@ footer {
 }
 
 .acm_title {
-  font-family: "Degular Display Demo Semibold", sans-serif;
+  font-family: "degular_display_demosemibold", sans-serif;
   font-size: 128px;
   line-height: 90%;
   letter-spacing: -0.5%;
 }
 
 .acm_desc {
-  font-family: "Degular Demo Light", sans-serif;
+  font-family: "degular_demolight", sans-serif;
   font-size: 36px;
   line-height: 100%;
   margin-top: 24px;
@@ -662,7 +680,7 @@ footer {
 
 .acm_tag {
   margin-left: 13px;
-  font-family: "Degular Display Demo Regular", sans-serif;
+  font-family: "degular_display_demoregular", sans-serif;
   font-size: 24px;
 }
 
