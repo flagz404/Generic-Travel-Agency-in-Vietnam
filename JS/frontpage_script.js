@@ -7,6 +7,8 @@ const video = document.querySelector('.video')
 const plcards = document.querySelector('.p_l_content')
 const pecards = document.querySelector('.p_e_content')
 const pacards = document.querySelector('.p_a_content')
+const signedin = document.getElementById('signedin')
+const signedout = document.getElementById('signedout')
 let PLcardIndex = 1;
 let PAcardIndex = 1;
 let PEcardIndex = 1;
@@ -313,3 +315,13 @@ pacards.addEventListener('transitionend', () => {
       movePACards()
     }
 })
+
+
+function checkSignedinOrNot(){
+  var SignedInStatus = localStorage.getItem("SignedInStatus");
+
+  if (SignedInStatus == "true") {
+    signedin.classList.toggle("hidden");
+    signedout.classList.toggle("hidden");
+  } else {};
+}

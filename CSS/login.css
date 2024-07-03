@@ -1,0 +1,129 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100%;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    background-color: #1c1b1f;
+}
+
+body a svg {
+    width: 72.33px;
+    height: 45.39px;
+    margin-left: 3.6vh;
+    margin-top: -96vh;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+.form {
+    height: 100vh;
+    background-color: #f8f8e6;
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gallery {
+    height: 100vh;
+    background-color: #f8f8e6;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+form {
+    margin-left: 3.6vh;
+}
+
+.title {
+    font-family: 'degular_display_demo', sans-serif;
+    font-weight: 600;
+    font-size: 5vh;
+}
+
+.warning {
+    font-family: 'degular_mono_demo', monospace;
+    font-weight: 500;
+    color: rgb(255, 0, 0);
+    margin-bottom: 5px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 1vw;
+    height: 1vw;
+    background-color: #f8f8e6;
+    border: 1px solid #1c1b1f;
+    cursor: pointer;
+    margin-bottom: -2px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #1c1b1f;
+    border: 1px solid #1c1b1f;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '\2714';
+    font-size: 0.8vw;
+    position: absolute;
+    margin: -2px 2px 0 2px;
+    color: #f8f8e6;
+}
+
+.textinputs {
+    margin-bottom: 10px;
+    background-color: #f8f8e6;
+    border: 1px solid #1c1b1f;
+    border-radius: 1px;
+    width: 27vw;
+    font-family: 'degular_demo', sans-serif;
+    font-weight: 100;
+    font-size: 2.5vh;
+    padding-left: 10px;
+}
+
+.remember-forgot {
+    width: 27vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'degular_demo', sans-serif;
+    font-weight: 400;
+    font-size: 1.01vw;
+}
+
+.remember-forgot a {
+    color: #1c1b1f;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #1c1b1f;
+    border: 1px solid #1c1b1f;
+    border-radius: 1px;
+    width: 27vw;
+    font-family: 'degular_demo', sans-serif !important;
+    font-weight: 100 !important;
+    font-size: 2.5vh !important;
+    color: #f8f8e6;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #f8f8e6;
+    border: 1px solid #1c1b1f;
+    color: #1c1b1f;
+}
+
+label {
+    cursor: pointer;
+}

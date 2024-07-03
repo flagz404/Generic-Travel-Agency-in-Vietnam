@@ -1,0 +1,81 @@
+/* Degular Font Family 🔽 */
+
+/* Degular Light */
+@font-face {
+    font-family: "degular_demo";
+    src: url("../FONTS/Degular/DegularDemo-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  /* Degular Thin */
+  @font-face {
+    font-family: "degular_demo";
+    src: url("../FONTS/Degular/DegularDemo-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  /* Degular Semibold */
+  @font-face {
+    font-family: "degular_demo";
+    src: url("../FONTS/Degular/DegularDemo-Semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  /* Degular Display Regular - aka Normal */
+  @font-face {
+    font-family: "degular_display_demo";
+    src: url("../FONTS/Degular Display/DegularDisplayDemo-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  /* Degular Display Semibold */
+  @font-face {
+    font-family: "degular_display_demo";
+    src: url("../FONTS/Degular Display/DegularDisplayDemo-Semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  /* Degular Display Thin */
+  @font-face {
+    font-family: "degular_display_demo";
+    src: url("../FONTS/Degular Display/DegularDisplayDemo-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  /* Degular Display Light */
+  @font-face {
+    font-family: "degular_display_demo";
+    src: url("../FONTS/Degular Display/DegularDisplayDemo-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  /* Degular Display Medium */
+  @font-face {
+    font-family: "degular_display_demo";
+    src: url("../FONTS/Degular Display/DegularDisplayDemo-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  /* Degular Mono Light */
+  @font-face {
+    font-family: "degular_mono_demo";
+    src: url("../FONTS/Degular Mono/DegularMonoDemo-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  /* Degular Mono Regular */
+  @font-face {
+    font-family: "degular_mono_demo";
+    src: url("../FONTS/Degular Mono/DegularMonoDemo-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  }  

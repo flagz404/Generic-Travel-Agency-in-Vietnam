@@ -1,51 +1,3 @@
-@font-face {
-  font-family: "degular_demolight";
-  src: url("../FONTS/degulardemo-light-webfont.woff2") format("woff2"),
-    url("../FONTS/degulardemo-light-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "degular_demothin";
-  src: url("../FONTS/degulardemo-thin-webfont.woff2") format("woff2"),
-    url("../FONTS/degulardemo-thin-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "degular_display_demoregular";
-  src: url("../FONTS/degulardisplaydemo-regular-webfont.woff2") format("woff2"),
-    url("../FONTS/degulardisplaydemo-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "degular_display_demosemibold";
-  src: url("../FONTS/degulardisplaydemo-semibold-webfont.woff2") format("woff2"),
-    url("../FONTS/degulardisplaydemo-semibold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "degular_display_demothin";
-  src: url("../FONTS/degulardisplaydemo-thin-webfont.woff2") format("woff2"),
-    url("../FONTS/degulardisplaydemo-thin-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "degular_mono_demolight";
-  src: url("../FONTS/degularmonodemo-light-webfont.woff2") format("woff2"),
-    url("../FONTS/degularmonodemo-light-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
@@ -84,7 +36,8 @@ body {
   font-size: 27.99px;
   letter-spacing: -1%;
   line-height: 100%;
-  font-family: "degular_demothin", sans-serif;
+  font-weight: 100;
+  font-family: "degular_demo", sans-serif;
 }
 
 .topnav a:hover {
@@ -94,7 +47,7 @@ body {
 .topnav-centered div {
   float: none;
   position: absolute;
-  width: 723px;
+  width: 800px;
   height: 95px;
   display: flex;
   justify-content: space-between;
@@ -109,6 +62,48 @@ body {
   display: flex;
   align-items: center;
   margin: 9px 9px 0 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.login {
+  font-family: 'degular_demo', sans-serif;
+  font-weight: 500;
+  font-size: 27.99px;
+  margin-right: 10px;
+  padding: 0 10px 0 10px;
+  text-align: center;
+  border: 1px solid #1c1b1f;
+  color: #f8f8e6;
+  background-color: #1c1b1f;
+  cursor: pointer;
+}
+
+.login:hover {
+  color: #1c1b1f;
+  background-color: #f8f8e6;
+  border: 1px solid #1c1b1f;
+}
+
+.signup {
+  font-family: 'degular_demo', sans-serif;
+  font-weight: 500;
+  font-size: 27.99px;
+  margin-right: 10px;
+  padding: 0 10px 0 10px;
+  text-align: center;
+  border: 1px solid #1c1b1f;
+  color: #f8f8e6;
+  background-color: #1c1b1f;
+  cursor: pointer;
+}
+
+.signup:hover {
+  color: #1c1b1f;
+  background-color: #f8f8e6;
+  border: 1px solid #1c1b1f;
 }
 
 .intro {
@@ -126,7 +121,8 @@ body {
   justify-content: center;
   padding-left: 30px;
   outline: solid 1px #1c1b1f;
-  font-family: "degular_display_demothin", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-family: 100;
   font-size: 128px;
   letter-spacing: -0.5%;
   line-height: 90%;
@@ -187,7 +183,8 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  font-family: "degular_display_demosemibold", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 600;
   transform: translateY(-5px);
 }
 
@@ -208,7 +205,8 @@ body {
 }
 
 .aboutvn_title p {
-  font-family: "degular_display_demosemibold", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 600;
   font-size: 128px;
   letter-spacing: -0.5%;
   line-height: 90%;
@@ -221,7 +219,8 @@ body {
 }
 
 .desc {
-  font-family: "degular_demolight", sans-serif;
+  font-family: "degular_demo", sans-serif;
+  font-weight: 300;
   font-size: 36px;
   line-height: 100%;
   text-align: right;
@@ -233,7 +232,8 @@ body {
 }
 
 #link {
-  font-family: "Degular Demo Semibold", sans-serif;
+  font-family: "degular_demo", sans-serif;
+  font-weight: 600;
   font-size: 36px;
   line-height: 100%;
   text-align: right;
@@ -292,7 +292,8 @@ body {
 
 .credits a {
   position: relative;
-  font-family: "degular_mono_demolight", monospace;
+  font-family: "degular_mono_demo", monospace;
+  font-weight: 100;
   line-height: 100%;
   letter-spacing: -1%;
   color: #f8f8e6;
@@ -307,7 +308,8 @@ body {
 }
 
 .p_l_title {
-  font-family: "degular_display_demoregular", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 400;
   font-size: 51.94px;
   color: #1c1b1f;
   border-bottom: solid 1px #1c1b1f;
@@ -375,7 +377,8 @@ body {
 
 .silder_card div p {
   position: relative;
-  font-family: "degular_mono_demolight", monospace;
+  font-family: "degular_mono_demo", monospace;
+  font-weight: 100;
   line-height: 100%;
   color: #1c1b1f;
 }
@@ -406,7 +409,8 @@ body {
 }
 
 .slider_link {
-  font-family: "Degular Demo Semibold", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 600;
   font-size: 51.94px;
   line-height: 100%;
   text-align: right;
@@ -435,14 +439,16 @@ body {
 }
 
 .exp_title {
-  font-family: "degular_display_demosemibold", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 600;
   font-size: 128px;
   line-height: 90%;
   letter-spacing: -0.5%;
 }
 
 .exp_desc {
-  font-family: "degular_demolight", sans-serif;
+  font-family: "degular_demo", sans-serif;
+  font-weight: 300;
   font-size: 36px;
   line-height: 100%;
   margin-top: 24px;
@@ -459,7 +465,7 @@ body {
 }
 
 .pop_title {
-  font-family: "degular_display_demoregular", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
   font-size: 51.94px;
   color: #1c1b1f;
   border-bottom: solid 1px #1c1b1f;
@@ -482,7 +488,8 @@ body {
 }
 
 .p_e_li {
-  font-family: "Degular Display Demo Light", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 400;
   font-size: 24px;
 }
 
@@ -531,7 +538,8 @@ body {
 }
 
 .div2 p {
-  font-family: "Degular Display Demo Medium", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 500;
   font-size: 27.99px;
   padding-right: 43px;
   background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='42px' viewBox='0 -960 960 960' width='42px' fill='%23F8F8E6'%3e%3cpath d='m248.74-237.38-53.28-53.29 398.12-398.12H233.37v-75.75h489.25v489.08H646.7v-360.05L248.74-237.38Z'/%3e%3c/svg%3e")
@@ -539,7 +547,8 @@ body {
 }
 
 .p_e_price {
-  font-family: "degular_display_demoregular", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 500;
   font-size: 28px;
   color: #1c1b1f;
 }
@@ -566,7 +575,8 @@ footer {
 }
 
 .footer1 p {
-  font-family: "Degular Display Demo Light", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 300;
   font-size: 22.25px;
   margin-top: 115px;
 }
@@ -577,14 +587,16 @@ footer {
 }
 
 .footer2 p {
-  font-family: "degular_mono_demolight", monospace;
+  font-family: "degular_mono_demo", monospace;
+  font-weight: 100;
   font-size: 24px;
   letter-spacing: -8%;
   color: #1c1b1f70;
 }
 
 .footer2 p a {
-  font-family: "degular_mono_demolight", monospace;
+  font-family: "degular_mono_demo", monospace;
+  font-weight: 100;
   font-size: 24px;
   letter-spacing: -8%;
   color: #1c1b1f70;
@@ -610,7 +622,8 @@ footer {
 }
 
 .site_map_chunk p {
-  font-family: "Degular Display Demo Light", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 300;
   font-size: 26.25px;
   color: #1c1b1f70;
   margin-bottom: 53px;
@@ -624,7 +637,8 @@ footer {
 .site_map_chunk_link {
   width: min-content;
   margin-bottom: 1px;
-  font-family: "Degular Display Demo Light", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 300;
   font-size: 26.65px;
   color: #1c1b1f;
   text-decoration: none;
@@ -655,14 +669,16 @@ footer {
 }
 
 .acm_title {
-  font-family: "degular_display_demosemibold", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 600;
   font-size: 128px;
   line-height: 90%;
   letter-spacing: -0.5%;
 }
 
 .acm_desc {
-  font-family: "degular_demolight", sans-serif;
+  font-family: "degular_demo", sans-serif;
+  font-weight: 300;
   font-size: 36px;
   line-height: 100%;
   margin-top: 24px;
@@ -680,7 +696,7 @@ footer {
 
 .acm_tag {
   margin-left: 13px;
-  font-family: "degular_display_demoregular", sans-serif;
+  font-family: "degular_display_demo", sans-serif;
   font-size: 24px;
 }
 
