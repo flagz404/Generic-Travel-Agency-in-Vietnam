@@ -28,8 +28,3 @@ btnLogin.addEventListener("click", (e) => {
       }
     }
   });
-
-// btnLogin.addEventListener("click", () => {
-//     warning1.classList.toggle("hidden");
-//     warning2.classList.toggle("hidden");
-// })
