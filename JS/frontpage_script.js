@@ -17,6 +17,16 @@ let isPAMoving = false;
 let isPEMoving = false;
 let slideIndex = 0;
 
+function checkSignedinOrNot(){
+  var LSSignedInStatus = localStorage.getItem("SignedInStatus");
+  var SSSignedInStatus = sessionStorage.getItem("SignedInStatus");
+
+  if (LSSignedInStatus === "true" || SSSignedInStatus === "true") {
+    signedin.classList.toggle("hidden");
+    signedout.classList.toggle("hidden");
+  } else {};
+}
+
 function moveSlides(){
     slide.style.transform = `translateY(-${slideIndex * 50}vh)`;
     slide2.style.transform = `translateY(-${slideIndex * 100}vh)`;
@@ -36,12 +46,11 @@ function checkSlides(){
 
 setInterval(() => {
   slideIndex += 1;
-  slide.style.transition = `transform 2000ms ease-in-out`;
-  slide2.style.transition = `transform 2000ms ease-in-out`;
-  adj.style.transition = `transform 2000ms ease-in-out`;
+  slide.style.transition = `transform 2s cubic-bezier(0.83, 0, 0.17, 1)`;
+  slide2.style.transition = `transform 2s cubic-bezier(0.83, 0, 0.17, 1)`;
+  adj.style.transition = `transform 2s cubic-bezier(0.83, 0, 0.17, 1)`;
   moveSlides();
   checkSlides();
-  console.log(slideIndex)
 }, 5000);
 
 mute.addEventListener('click', () => {
@@ -59,7 +68,7 @@ function movePLCards(){
 
 function movePLHandler(direction){
   isPLMoving = true;
-  plcards.style.transition = `transform 400ms ease-in-out`;
+  plcards.style.transition = `transform 0.5s cubic-bezier(0.65, 0, 0.35, 1)`;
   if(direction === 'right'){
     PLcardIndex += 1
   }
@@ -82,7 +91,6 @@ async function fetchPLCards(){
       data.push(data[1]);
       data.push(data[2]);
       data.unshift(data[data.length - 4]);
-      console.log(data)
       plcards.innerHTML = data.map(processPLCards).join('');
     movePLCards();
     })
@@ -128,7 +136,6 @@ plcards.addEventListener('transitionend', () => {
     if(PLcardIndex === 0){
       plcards.style.transition = 'none';
       PLcardIndex = PLcardsArray.length - 4;
-      console.log(PLcardsArray)
       movePLCards()
     }
     if(PLcardIndex === PLcardsArray.length - 3){
@@ -148,7 +155,7 @@ function movePECards(){
 
 function movePEHandler(direction){
   isPEMoving = true;
-  pecards.style.transition = `transform 400ms ease-in-out`;
+  pecards.style.transition = `transform 0.5s cubic-bezier(0.65, 0, 0.35, 1)`;
   if(direction === 'right'){
     PEcardIndex += 1
   }
@@ -171,7 +178,6 @@ async function fetchPECards(){
       data.push(data[1]);
       data.push(data[2]);
       data.unshift(data[data.length - 4]);
-      console.log(data)
       pecards.innerHTML = data.map(processPECards).join('');
     movePECards();
     })
@@ -217,7 +223,6 @@ pecards.addEventListener('transitionend', () => {
     if(PEcardIndex === 0){
       pecards.style.transition = 'none';
       PEcardIndex = PEcardsArray.length - 4;
-      console.log(PEcardsArray)
       movePECards()
     }
     if(PEcardIndex === PEcardsArray.length - 3){
@@ -237,7 +242,7 @@ function movePACards(){
 
 function movePAHandler(direction){
   isPAMoving = true;
-  pacards.style.transition = `transform 400ms ease-in-out`;
+  pacards.style.transition = `transform 0.5s cubic-bezier(0.65, 0, 0.35, 1)`;
   if(direction === 'right'){
     PAcardIndex += 1
   }
@@ -260,7 +265,6 @@ async function fetchPACards(){
       data.push(data[1]);
       data.push(data[2]);
       data.unshift(data[data.length - 4]);
-      console.log(data)
       pacards.innerHTML = data.map(processPACards).join('');
     movePACards();
     })
@@ -306,7 +310,6 @@ pacards.addEventListener('transitionend', () => {
     if(PAcardIndex === 0){
       pacards.style.transition = 'none';
       PAcardIndex = PAcardsArray.length - 4;
-      console.log(PAcardsArray)
       movePACards()
     }
     if(PAcardIndex === PAcardsArray.length - 3){
@@ -315,13 +318,3 @@ pacards.addEventListener('transitionend', () => {
       movePACards()
     }
 })
-
-
-function checkSignedinOrNot(){
-  var SignedInStatus = localStorage.getItem("SignedInStatus");
-
-  if (SignedInStatus == "true") {
-    signedin.classList.toggle("hidden");
-    signedout.classList.toggle("hidden");
-  } else {};
-}

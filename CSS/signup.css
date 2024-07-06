@@ -16,7 +16,7 @@ body a svg {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .form {
@@ -32,7 +32,6 @@ body a svg {
     height: 100vh;
     background-color: #f8f8e6;
     grid-area: 1 / 2 / 2 / 3;
-    overflow: hidden;
 }
 
 form {
@@ -52,22 +51,6 @@ form {
     margin-bottom: 5px;
 }
 
-input[type="checkbox"] {
-    appearance: none;
-    width: 1vw;
-    height: 1vw;
-    background-color: #f8f8e6;
-    border: 1px solid #1c1b1f;
-    cursor: pointer;
-    margin-bottom: -2px;
-    transition: 0.3s;
-}
-
-input[type="checkbox"]:checked {
-    background-color: #1c1b1f;
-    border: 1px solid #1c1b1f;
-}
-
 .textinputs {
     margin-bottom: 10px;
     background-color: #f8f8e6;
@@ -80,22 +63,15 @@ input[type="checkbox"]:checked {
     padding-left: 10px;
 }
 
-.remember-forgot {
-    width: 27vw;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
+.tologin {
     font-family: 'degular_demo', sans-serif;
     font-weight: 400;
     font-size: 1.01vw;
-}
-
-.remember-forgot a {
     color: #1c1b1f;
     text-decoration: none;
 }
 
-.remember-forgot a:hover {
+.tologin:hover {
     text-decoration: underline;
 }
 
@@ -122,6 +98,10 @@ button:hover {
 
 label {
     cursor: pointer;
+}
+
+.gallery {
+    overflow: hidden;
 }
 
 .gallery_container {
@@ -156,7 +136,8 @@ label {
 .author p a{
     color: #1c1b1f;
     text-decoration: none;
-    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='20px' viewBox='0 -960 960 960' width='20px' fill='%231C1B1F'%3e%3cpath d='m248.74-237.38-53.28-53.29 398.12-398.12H233.37v-75.75h489.25v489.08H646.7v-360.05L248.74-237.38Z'/%3e%3c/svg%3e") no-repeat right bottom;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='20px' viewBox='0 -960 960 960' width='20px' fill='%231C1B1F'%3e%3cpath d='m248.74-237.38-53.28-53.29 398.12-398.12H233.37v-75.75h489.25v489.08H646.7v-360.05L248.74-237.38Z'/%3e%3c/svg%3e")
+    no-repeat right bottom;
     padding-right: 24px;
 }
 
@@ -164,4 +145,33 @@ label {
     cursor: pointer;
     text-decoration: underline;
     color: #1c1b1f;
+}
+
+.notify {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notify h1 {
+    font-family: 'degular_display_demo';
+    font-size: 2.1em;
+}
+
+.notify label {
+    font-family: 'degular_demo';
+    font-size: 1.2em;
+    cursor: default;
+}
+
+.notify a {
+    font-family: 'degular_demo';
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='20px' viewBox='0 -960 960 960' width='20px' fill='%231C1B1F'%3e%3cpath d='m248.74-237.38-53.28-53.29 398.12-398.12H233.37v-75.75h489.25v489.08H646.7v-360.05L248.74-237.38Z'/%3e%3c/svg%3e") no-repeat right bottom;
+    padding-right: 20px;
+    color: #1c1b1f;
+    text-decoration: none;
+}
+
+.notify a:hover{
+    text-decoration: underline;
 }
