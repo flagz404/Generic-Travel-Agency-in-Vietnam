@@ -75,6 +75,7 @@ body {
   color: #f8f8e6;
   background-color: #1c1b1f;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .login:hover {
@@ -94,6 +95,7 @@ body {
   color: #f8f8e6;
   background-color: #1c1b1f;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .signup:hover {
