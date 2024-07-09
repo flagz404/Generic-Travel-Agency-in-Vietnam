@@ -1,0 +1,259 @@
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  background-color: #f8f8e6;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 123px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border-bottom: 1px solid #1c1b1f;
+  padding: 0 30px 0 30px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.logo svg {
+  width: 72.33px;
+  height: 45.39px;
+  margin: 9px 9px 0 0;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.centered {
+  height: auto;
+  grid-area: 1 / 2 / 2 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-container {
+  width: 800px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.centered-links {
+  color: #1c1b1f;
+  text-align: center;
+  text-decoration: none;
+  font-size: 27.99px;
+  letter-spacing: -1%;
+  line-height: 100%;
+  font-weight: 100;
+  font-family: "degular_demo", sans-serif;
+}
+
+.centered-links:hover {
+  text-decoration: underline;
+}
+
+.right {
+  float: right;
+  display: flex;
+  align-items: center;
+  margin: 9px 9px 0 0;
+}
+
+.signin-n-out {
+  grid-area: 1 / 3 / 2 / 4;
+  display: flex;
+  justify-content: right;
+}
+
+.user {
+  height: 45.39px;
+  height: 45.39px;
+  border-radius: 100px;
+  margin-left: 14px;
+}
+
+.login {
+  margin-right: 10px;
+  border: 1px solid #1c1b1f;
+  background-color: #1c1b1f;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 5.5px 10px 5.5px 10px;
+}
+
+.login a {
+  font-family: "degular_demo", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  color: #f8f8e6;
+  font-size: 27.99px;
+  text-decoration: none;
+}
+
+.login:hover {
+  color: #1c1b1f;
+  background-color: #f8f8e6;
+  border: 1px solid #1c1b1f;
+}
+
+.login a:hover {
+  color: #1c1b1f;
+  text-decoration: none;
+}
+
+.signup {
+  padding: 5.5px 10px 5.5px 10px;
+  text-align: center;
+  border: 1px solid #1c1b1f;
+  background-color: #1c1b1f;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup a {
+  font-family: "degular_demo", sans-serif;
+  font-weight: 500;
+  color: #f8f8e6;
+  font-size: 27.99px;
+  text-decoration: none;
+}
+
+.signup:hover {
+  color: #1c1b1f;
+  background-color: #f8f8e6;
+  border: 1px solid #1c1b1f;
+}
+
+.signup a:hover {
+  color: #f8f8e6;
+  text-decoration: none;
+}
+
+.hottest-travel-offers-card {
+  width: 100vw;
+  padding: 30px;
+  background: url("../IMG/img30.webp");
+  height: 80vh;
+  background-position: center;
+}
+
+.hottest-travel-offers-card-title {
+  font-family: "degular_display_demo", sans-serif;
+  font-weight: 700;
+  font-size: 5em;
+  line-height: 100%;
+  display: flex;
+  color: #f8f8e6;
+}
+
+.splitter {
+    width: 0px;
+    height: 1em;
+    border: 4px solid #f8f8e6;
+    margin: 0 12px 0 12px;
+}
+
+.hottest-travel-offers-card-location {
+  font-family: "degular_mono_demo", monospace;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 100%;
+  margin-top: 30px;
+  color: #f8f8e6;
+}
+
+.hottest-travel-offers-card-ratings::after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='60px' viewBox='0 -960 960 960' width='60px' fill='%23f8f8e6'%3E%3Cpath d='m243-144 63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Z'/%3E%3C/svg%3E");
+}
+
+.hottest-travel-offers-card-desc {
+    margin-top: 5px;
+    font-family: 'degular_demo', sans-serif;
+    font-size: 1.5em;
+    width: 50vw;
+    color: #f8f8e6;
+}
+
+.hottest-travel-offers-card-title-link {
+    color: #f8f8e6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hottest-travel-offers-card-title-link:hover {
+    text-decoration: underline;
+}
+
+.hottest-travel-offers-card-price {
+    display: flex;
+    font-family: 'degular_mono_demo', monospace;
+    margin-top: 5px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #f8f8e69d;
+    font-size: 1.2em;
+    margin-right: 10px;
+    line-height: 150%;
+}
+
+.discounted-price {
+    font-size: 1.5em;
+    line-height: 100%;
+    color: #f8f8e6;
+}
+
+.hottest-travel-offers-card-gradient {
+    height: 12vw;
+    width: 100vw;
+    margin: -30px 0 -12vw -30px;
+    background: rgb(28,27,31);
+    background: linear-gradient(180deg, rgba(28,27,31,1) 0%, rgba(131,128,135,0.8225665266106442) 51%, rgba(28,27,31,0) 100%);
+}
+
+.hottest-travel-offers-card-discount-percentage {
+    margin-left: 84vw;
+    margin-top: -21.5vh;
+}
+
+.hottest-travel-offers-card-discount-percentage img {
+    height: 15em;
+    width: auto;
+}
+
+.hottest-travel-offers-card-discount-percentage p {
+    font-family: 'degular_display_demo', sans-serif;
+    font-weight: 600;
+    font-size: 5em;
+    color: #f8f8e6;
+    text-align: center;
+    width: 3em;
+    margin-top: -2.3em;
+    position: relative;
+}
+
+#hottest-travel-offers-card-discount-percentage-star {
+    animation-name: spin;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}

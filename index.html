@@ -22,9 +22,9 @@
 <body onload="checkSignedinOrNot()">
     <!-- <div class="sidebar"></div> -->
     <header>
-        <div class="topnav">
+        <div class="logo">
             <a href="#">
-                <svg width="1900" height="1247" viewBox="0 0 1900 1247" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo">
+                <svg width="1900" height="1247" viewBox="0 0 1900 1247" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1433.32 231.056L1433.32 231.048L1433.32 231.04C1443.39 175.68 1430.05 125.969 1393.57 83.6533C1357.29 41.5611 1310.64 20.192 1255.05 20.192H869.926C839.075 20.192 810.01 27.8332 783.049 43.0083C756.516 57.9423 735.278 77.5276 719.87 101.843L30.8232 1135.41C24.7349 1144.55 20.8069 1154.7 20.2578 1165.68C19.7057 1176.72 22.6428 1187.17 28.0441 1196.71L28.0502 1196.72C39.7036 1217.25 59.3137 1227.02 82.7769 1227.02H1167.22C1190.7 1227.02 1212.09 1219.6 1230.77 1205.13C1249.94 1190.28 1261.87 1170.45 1266.11 1146.52C1266.11 1146.5 1266.11 1146.48 1266.12 1146.46L1433.32 231.056Z" fill="#1E1E1E" stroke="white" stroke-width="39.6161"/>
                 <path d="M1252.13 515.407L1159.3 229.71C1148.4 196.146 1100.91 196.146 1090.01 229.71L997.178 515.407L696.779 515.407C661.487 515.407 646.813 560.568 675.365 581.312L918.393 757.882L825.564 1043.58C814.659 1077.14 853.075 1105.05 881.627 1084.31L1124.65 907.74L1367.68 1084.31C1396.23 1105.05 1434.65 1077.14 1423.74 1043.58L1332.38 762.401L1817.95 586.082C1856.28 572.165 1846.29 515.407 1805.51 515.407H1252.13Z" fill="url(#paint0_linear_49_6208)" stroke="white" stroke-width="39.6161"/>
                 <defs>
@@ -35,15 +35,17 @@
                 </defs>
                 </svg>
             </a>
-            <div class="topnav-centered">
-                <div>
-                    <a href="#">Travel Offers</a>
-                    <a href="#">Accommodation</a>
-                    <a href="#">Cities</a>
-                    <a href="#">Experiences</a>
-                    <a href="#">About Us</a>
-                </div>
+        </div>
+        <div class="centered">
+            <div class="centered-container">
+                <a class="centered-links" href="/HTML/traveloffers.html">Travel Offers</a>
+                <a class="centered-links" href="#">Accommodation</a>
+                <a class="centered-links" href="#">Cities</a>
+                <a class="centered-links" href="#">Experiences</a>
+                <a class="centered-links" href="#">About Us</a>
             </div>
+        </div>
+        <div class="signin-n-out">
             <div id="signedin" class="topnav-right hidden">
                 <a href="#" class="checkout">
                     <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#1C1B1F"><path d="M289.4-98.1q-27.54 0-46.68-19.35-19.13-19.35-19.13-47t19.27-46.85q19.27-19.21 46.81-19.21 27.54 0 46.8 19.35 19.27 19.35 19.27 46.99 0 27.65-19.35 46.86T289.4-98.1Zm387.69 0q-27.54 0-46.67-19.35-19.14-19.35-19.14-47t19.27-46.85q19.27-19.21 46.81-19.21 27.54 0 46.81 19.35 19.26 19.35 19.26 46.99 0 27.65-19.35 46.86-19.34 19.21-46.99 19.21ZM235.33-740.15l108.16 225.84h276.48q3.47 0 6.29-1.73t4.48-4.81l114.75-208.53q2.31-4.24.38-7.51-1.92-3.26-6.54-3.26h-504Zm-24.97-50.26h555q24.53 0 37.09 21.09 12.57 21.09.78 42.86L678.55-500.6q-9.94 16.83-25.76 26.69-15.82 9.86-34.33 9.86H324l-52.26 96.25q-2.82 4.62-.06 10 2.76 5.39 8.53 5.39h463.22v50.25H284.67q-38.52 0-56.4-28.88-17.88-28.88-.27-61.37l61.95-112.36-149.33-314.97H65.28V-870h107.49l37.59 79.59Zm133.13 276.1h283.79-283.79Z"/></svg>
@@ -51,8 +53,8 @@
                 <a href="#"><img src="./IMG/user.jpg" alt="user" class="user" style="width: 45.38px; height: 45.38px;"></a>
             </div>
             <div id="signedout" class="topnav-right">
-                <button class="login">Login</button>
-                <button class="signup">Signup</button>
+                <button class="login"><a href="/HTML/login.html">Login</a></button>
+                <button class="signup"><a href="/HTML/signup.html">Signup</a></button>
             </div>
         </div>
     </header>
@@ -101,7 +103,7 @@
         <div class="aboutvn_title"><p>About Vietnam</p></div>
         <div class="aboutvn_desc">
             <p class="desc">Vietnam is a land of stunning contrasts, where ancient charm meets vibrant modernity. Explore the terraced fields of<a href="#" id="link">Sapa</a>and the majestic limestone karsts of<a href="#" id="link">Ha Long Bay</a>. Dive into the dynamic pulse of<a href="#" id="link">Ho Chi Minh City</a>and the rich heritage of<a href="#" id="link">Hanoi</a>. Discover lantern-lit streets in<a href="#" id="link">Hoi An</a>and imperial splendors in<a href="#" id="link">Hue</a>. From bustling cityscapes to serene landscapes, Vietnam offers a captivating journey through its breathtaking beauty and diverse cultural tapestry.</p>
-        </div>       
+        </div>  
     </div>
     <div>
         <div class="video1">
