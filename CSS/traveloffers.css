@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
+  overflow-x: hidden;
 }
 
 body {
@@ -142,21 +143,44 @@ header {
   text-decoration: none;
 }
 
-.hottest-travel-offers-card {
+.hto-card {
   width: 100vw;
-  padding: 30px;
-  background: url("../IMG/img30.webp");
+  background: url("../IMG/img30.webp") no-repeat;
   height: 80vh;
-  background-position: center;
+  animation-name: subtle-slide;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+  background-position: -10vh;
 }
 
-.hottest-travel-offers-card-title {
+@keyframes subtle-slide {
+  from {
+    background-position: 0;
+  }  
+  to {
+    background-position: -10vh;
+  }
+}
+
+.hto-c-container {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-top: -9vw;
+}
+
+.hto-c-title {
   font-family: "degular_display_demo", sans-serif;
   font-weight: 700;
   font-size: 5em;
-  line-height: 100%;
+  line-height: 90%;
   display: flex;
   color: #f8f8e6;
+  margin-left: 3vw;
+  grid-area: 2 / 1 / 3 / 2;
 }
 
 .splitter {
@@ -166,41 +190,51 @@ header {
     margin: 0 12px 0 12px;
 }
 
-.hottest-travel-offers-card-location {
+.hto-c-location {
   font-family: "degular_mono_demo", monospace;
   font-size: 1em;
   font-weight: 400;
   line-height: 100%;
-  margin-top: 30px;
+  margin-left: 3vw;
   color: #f8f8e6;
+  text-decoration: none;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
-.hottest-travel-offers-card-ratings::after {
+.hto-c-location:hover {
+  text-decoration: underline;
+}
+
+.hto-c-ratings::after {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='60px' viewBox='0 -960 960 960' width='60px' fill='%23f8f8e6'%3E%3Cpath d='m243-144 63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Z'/%3E%3C/svg%3E");
 }
 
-.hottest-travel-offers-card-desc {
+.hto-c-desc {
     margin-top: 5px;
+    margin-left: 3vw;
     font-family: 'degular_demo', sans-serif;
     font-size: 1.5em;
     width: 50vw;
     color: #f8f8e6;
+    grid-area: 3 / 1 / 4 / 2;
 }
 
-.hottest-travel-offers-card-title-link {
+.hto-c-t-link {
     color: #f8f8e6;
     text-decoration: none;
     cursor: pointer;
 }
 
-.hottest-travel-offers-card-title-link:hover {
+.hto-c-t-link:hover {
     text-decoration: underline;
 }
 
-.hottest-travel-offers-card-price {
+.hto-c-price {
     display: flex;
     font-family: 'degular_mono_demo', monospace;
     margin-top: 5px;
+    margin-left: 3vw;
+    grid-area: 4 / 1 / 5 / 2;
 }
 
 .original-price {
@@ -217,36 +251,38 @@ header {
     color: #f8f8e6;
 }
 
-.hottest-travel-offers-card-gradient {
+.hto-c-gradient {
     height: 12vw;
     width: 100vw;
-    margin: -30px 0 -12vw -30px;
     background: rgb(28,27,31);
     background: linear-gradient(180deg, rgba(28,27,31,1) 0%, rgba(131,128,135,0.8225665266106442) 51%, rgba(28,27,31,0) 100%);
 }
 
-.hottest-travel-offers-card-discount-percentage {
-    margin-left: 84vw;
-    margin-top: -21.5vh;
+.hto-c-discount-percentage {
+    grid-area: 1 / 2 / 5 / 3;
+    padding-right: 3vw;
+    display: flex;
+    justify-content: right;
 }
 
-.hottest-travel-offers-card-discount-percentage img {
+.hto-c-discount-percentage img {
     height: 15em;
     width: auto;
 }
 
-.hottest-travel-offers-card-discount-percentage p {
+.hto-c-discount-percentage p {
     font-family: 'degular_display_demo', sans-serif;
     font-weight: 600;
     font-size: 5em;
     color: #f8f8e6;
     text-align: center;
     width: 3em;
-    margin-top: -2.3em;
     position: relative;
+    line-height: 300%;
+    margin-left: -12.5vw;
 }
 
-#hottest-travel-offers-card-discount-percentage-star {
+#hto-c-discount-percentage-star {
     animation-name: spin;
     animation-duration: 10s;
     animation-iteration-count: infinite;
@@ -256,4 +292,51 @@ header {
 @keyframes spin {
     from {transform: rotate(0deg);}
     to{transform: rotate(360deg);}
+}
+
+.hto-slider {
+  display: grid;
+  grid-template-columns: 1fr 15fr 1fr;
+  grid-template-rows: 6.9vh;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: 1px solid #1c1b1f;
+}
+
+.hto-slider button {
+  border-radius: 0;
+  cursor: pointer;
+  border-style: none;
+}
+
+.hto-btn-left {
+  grid-area: 1 / 1 / 2 / 2;
+  border-right: 1px solid #1c1b1f !important;
+  transition: 0.3s;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40px' viewBox='0 -960 960 960' width='40px' fill='%231c1b1f'%3E%3Cpath d='M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z'/%3E%3C/svg%3E") no-repeat center center #f8f8e6;
+}
+
+.hto-btn-left:hover {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40px' viewBox='0 -960 960 960' width='40px' fill='%23f8f8e6'%3E%3Cpath d='M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z'/%3E%3C/svg%3E") no-repeat center center #1c1b1f;
+}
+
+.hto-btn-left:active {
+  transition: 0.04s;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20px' viewBox='0 -960 960 960' width='20px' fill='%23f8f8e6'%3E%3Cpath d='M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z'/%3E%3C/svg%3E") no-repeat center center #1c1b1f;
+}
+
+.hto-btn-right {
+  grid-area: 1 / 3 / 2 / 4;
+  border-left: 1px solid #1c1b1f !important;
+  transition: 0.3s;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40px' viewBox='0 -960 960 960' width='40px' fill='%231c1b1f'%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z'/%3E%3C/svg%3E") no-repeat center center #f8f8e6;
+}
+
+.hto-btn-right:hover {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40px' viewBox='0 -960 960 960' width='40px' fill='%23f8f8e6'%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z'/%3E%3C/svg%3E") no-repeat center center #1c1b1f;
+}
+
+.hto-btn-right:active {
+  transition: 0.04s;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20px' viewBox='0 -960 960 960' width='20px' fill='%23f8f8e6'%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z'/%3E%3C/svg%3E") no-repeat center center #1c1b1f;
 }
