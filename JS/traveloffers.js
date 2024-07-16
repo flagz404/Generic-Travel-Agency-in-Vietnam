@@ -7,7 +7,6 @@ const hto_btn_right = document.querySelector(".hto-btn-right");
 let HTOactive = 0;
 let lengthHTOItems = hto_items.length;
 
-function debug(){console.log(hto_items);}
 
 hto_btn_right.onclick = function () {
   if (HTOactive + 1 >= lengthHTOItems) {
@@ -49,3 +48,33 @@ hto_dots.forEach((li, key) => {
   });
 });
 
+const hotelOffers = document.getElementById("hoteloffers");
+const hOcards = document.querySelectorAll(".hOcards");
+const hOprev = document.getElementById("hOprev");
+const hOnext = document.getElementById("hOnext");
+
+let hOactive = 0;
+let hOItemsLength = hOcards.length;
+
+hOnext.onclick = function () {
+  if (hOactive + 1 >= hOItemsLength) {
+    hOactive = 0;
+  } else {
+    hOactive = hOactive + 1;
+  }
+  reloadhOSlider();
+};
+
+hOprev.onclick = function () {
+  if (hOactive - 1 < 0) {
+    hOactive = hOItemsLength - 1;
+  } else {
+    hOactive = hOactive - 1;
+  }
+  reloadhOSlider();
+};
+
+function reloadhOSlider() {
+  hotelOffers.style.transition = `transform 1s cubic-bezier(0.83, 0, 0.17, 1)`
+  hotelOffers.style.transform = `translateX(-${hOactive * (3 * 29.43)}vw)`;
+}

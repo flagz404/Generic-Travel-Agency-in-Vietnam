@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../FAVICONS/favicon16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../FAVICONS/favicon32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../FAVICONS/favicon48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="../FAVICONS/favicon180.png" sizes="180x180">
+    <link rel="stylesheet" href="../FONTS/fonts.css">
+    <link rel="stylesheet" href="../CSS/shoppingcart.css">
+    <style>
+        /*
+        Josh's Custom CSS Reset
+        https://www.joshwcomeau.com/css/custom-css-reset/
+        */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        body {
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img,
+        picture,
+        video,
+        canvas,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            overflow-wrap: break-word;
+        }
+
+        #root,
+        #__next {
+            isolation: isolate;
+        }
+    </style>
+    <title>Shopping Cart | Generic Travel Agency</title>
+</head>
+<body onload="checkSignedinOrNot()">
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <svg width="1900" height="1247" viewBox="0 0 1900 1247" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1433.32 231.056L1433.32 231.048L1433.32 231.04C1443.39 175.68 1430.05 125.969 1393.57 83.6533C1357.29 41.5611 1310.64 20.192 1255.05 20.192H869.926C839.075 20.192 810.01 27.8332 783.049 43.0083C756.516 57.9423 735.278 77.5276 719.87 101.843L30.8232 1135.41C24.7349 1144.55 20.8069 1154.7 20.2578 1165.68C19.7057 1176.72 22.6428 1187.17 28.0441 1196.71L28.0502 1196.72C39.7036 1217.25 59.3137 1227.02 82.7769 1227.02H1167.22C1190.7 1227.02 1212.09 1219.6 1230.77 1205.13C1249.94 1190.28 1261.87 1170.45 1266.11 1146.52C1266.11 1146.5 1266.11 1146.48 1266.12 1146.46L1433.32 231.056Z"
+                        fill="#1E1E1E" stroke="white" stroke-width="39.6161" />
+                    <path
+                        d="M1252.13 515.407L1159.3 229.71C1148.4 196.146 1100.91 196.146 1090.01 229.71L997.178 515.407L696.779 515.407C661.487 515.407 646.813 560.568 675.365 581.312L918.393 757.882L825.564 1043.58C814.659 1077.14 853.075 1105.05 881.627 1084.31L1124.65 907.74L1367.68 1084.31C1396.23 1105.05 1434.65 1077.14 1423.74 1043.58L1332.38 762.401L1817.95 586.082C1856.28 572.165 1846.29 515.407 1805.51 515.407H1252.13Z"
+                        fill="url(#paint0_linear_49_6208)" stroke="white" stroke-width="39.6161" />
+                    <defs>
+                        <linearGradient id="paint0_linear_49_6208" x1="1107.14" y1="708.568" x2="1891.42" y2="502.855"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#1E1E1E" />
+                            <stop offset="1" stop-color="#C4C4C4" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </a>
+        </div>
+        <div class="centered">
+            <div class="centered-container">
+                <a class="centered-links" href="/HTML/traveloffers.html">Travel Offers</a>
+                <a class="centered-links" href="#">Accommodation</a>
+                <a class="centered-links" href="#">Cities</a>
+                <a class="centered-links" href="#">Experiences</a>
+                <a class="centered-links" href="#">About Us</a>
+            </div>
+        </div>
+        <div class="signin-n-out">
+            <div id="signedin" class="right hidden">
+                <a href="#" class="checkout">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                        fill="#1C1B1F">
+                        <path
+                            d="M289.4-98.1q-27.54 0-46.68-19.35-19.13-19.35-19.13-47t19.27-46.85q19.27-19.21 46.81-19.21 27.54 0 46.8 19.35 19.27 19.35 19.27 46.99 0 27.65-19.35 46.86T289.4-98.1Zm387.69 0q-27.54 0-46.67-19.35-19.14-19.35-19.14-47t19.27-46.85q19.27-19.21 46.81-19.21 27.54 0 46.81 19.35 19.26 19.35 19.26 46.99 0 27.65-19.35 46.86-19.34 19.21-46.99 19.21ZM235.33-740.15l108.16 225.84h276.48q3.47 0 6.29-1.73t4.48-4.81l114.75-208.53q2.31-4.24.38-7.51-1.92-3.26-6.54-3.26h-504Zm-24.97-50.26h555q24.53 0 37.09 21.09 12.57 21.09.78 42.86L678.55-500.6q-9.94 16.83-25.76 26.69-15.82 9.86-34.33 9.86H324l-52.26 96.25q-2.82 4.62-.06 10 2.76 5.39 8.53 5.39h463.22v50.25H284.67q-38.52 0-56.4-28.88-17.88-28.88-.27-61.37l61.95-112.36-149.33-314.97H65.28V-870h107.49l37.59 79.59Zm133.13 276.1h283.79-283.79Z" />
+                    </svg>
+                </a>
+                <a href="#"><img src="../IMG/user.jpg" alt="user" class="user"
+                        style="width: 45.38px; height: 45.38px;"></a>
+            </div>
+            <div id="signedout" class="right">
+                <button class="login"><a href="/HTML/login.html">Login</a></button>
+                <button class="signup"><a href="/HTML/signup.html">Signup</a></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="shopping-cart-title">Shopping Cart</h2>
+        <div class="shopping-cart-container">
+            <div class="shopping-cart-items">
+                <div class="shopping-cart-item">
+                    <img class="sci-img" src="../IMG/img29.webp" alt="">
+                    <p class="sci-name">Windy Peaks</p>
+                    <div class="sci-amount">
+                        <p>1 person | 10 nights</p>
+                    </div>
+                    <p class="sci-price">Total: <span>300.000 VND</span></p>
+                    <div class="sci-remove">
+                        <button class="sci-remove-btn">X</button>
+                    </div>
+                </div>
+                <!-- <hr> -->
+                <div class="shopping-cart-item">
+                    <img class="sci-img" src="../IMG/img29.webp" alt="">
+                    <p class="sci-name">Windy Peaks</p>
+                    <div class="sci-amount">
+                        <p>1 person | 10 nights</p>
+                    </div>
+                    <p class="sci-price">Total: <span>300.000 VND</span></p>
+                    <div class="sci-remove">
+                        <button class="sci-remove-btn">X</button>
+                    </div>
+                </div>
+                <div class="shopping-cart-item">
+                    <img class="sci-img" src="../IMG/img29.webp" alt="">
+                    <p class="sci-name">Windy Peaks</p>
+                    <div class="sci-amount">
+                        <p>1 person | 10 nights</p>
+                    </div>
+                    <p class="sci-price">Total: <span>300.000 VND</span></p>
+                    <div class="sci-remove">
+                        <button class="sci-remove-btn">X</button>
+                    </div>
+                </div>
+            </div>
+            <div class="shopping-cart-price">
+                Total: 900.000VND
+            </div>
+            <div class="shopping-cart-checkout">
+                <button>Checkout</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer1">
+            <img src="../IMG/gtavlogo.svg" alt="Generic Travel Agency in Vietnam">
+            <p>Copyright © Tuan Khoi Nguyen 2024</p>
+        </div>
+        <div class="footer2">
+            <div class="site_map">
+                <div class="site_map_chunk">
+                    <p>Travel Offers</p>
+                    <div>
+                        <a href="#" class="site_map_chunk_link">Discounted Fights</a>
+                        <a href="#" class="site_map_chunk_link">Discounted Hotels</a>
+                        <a href="#" class="site_map_chunk_link">Discounted Experiences</a>
+                    </div>
+                </div>
+                <div class="site_map_chunk">
+                    <p>Accommodation</p>
+                    <div>
+                        <a href="#" class="site_map_chunk_link">Hotels</a>
+                        <a href="#" class="site_map_chunk_link">Resorts</a>
+                        <a href="#" class="site_map_chunk_link">Homestays</a>
+                    </div>
+                </div>
+                <div class="site_map_chunk">
+                    <p>Cities</p>
+                    <div>
+                        <a href="#" class="site_map_chunk_link">Hanoi</a>
+                        <a href="#" class="site_map_chunk_link">HCMC</a>
+                        <a href="#" class="site_map_chunk_link">Da Nang</a>
+                        <a href="#" class="site_map_chunk_link">Sapa</a>
+                        <a href="#" class="site_map_chunk_link">Hoi An</a>
+                        <a href="#" class="site_map_chunk_link">Hue</a>
+                        <a href="#" class="site_map_chunk_link">Ha Long Bay</a>
+                    </div>
+                </div>
+                <div class="site_map_chunk">
+                    <p>Experiences</p>
+                    <div>
+                        <a href="#" class="site_map_chunk_link">Popular Experiences</a>
+                        <a href="#" class="site_map_chunk_link">New Experiences</a>
+                    </div>
+                </div>
+                <div class="site_map_chunk">
+                    <p>Socials</p>
+                    <div>
+                        <a href="https://x.com/flagz_" class="site_map_chunk_link" target="_blank">Twitter</a>
+                        <a href="https://github.com/flagz404" class="site_map_chunk_link" target="_blank">Github</a>
+                        <a href="#" class="site_map_chunk_link">Email</a>
+                    </div>
+                </div>
+            </div>
+            <p><a href="#">PRIVACY AND COOKIE POLICY</a>| I’M USING DEGULAR AND POLYMATH BY OHNO TYPE</p>
+        </div>
+    </footer>
+    <script>
+        function checkSignedinOrNot(){
+            var LSSignedInStatus = localStorage.getItem("SignedInStatus");
+            var SSSignedInStatus = sessionStorage.getItem("SignedInStatus");
+
+            if (LSSignedInStatus === "true" || SSSignedInStatus === "true") {
+                signedin.classList.toggle("hidden");
+                signedout.classList.toggle("hidden");
+            } else {};
+        }
+    </script>
+</body>
+</html>

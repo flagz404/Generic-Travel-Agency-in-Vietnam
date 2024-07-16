@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./FAVICONS/favicon16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="./FAVICONS/favicon32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="./FAVICONS/favicon48.png" sizes="48x48">
-    <link rel="icon" type="image/png" href="./FAVICONS/favicon180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="../FAVICONS/favicon16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../FAVICONS/favicon32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../FAVICONS/favicon48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="../FAVICONS/favicon180.png" sizes="180x180">
     <link rel="stylesheet" href="../FONTS/fonts.css">
     <link rel="stylesheet" href="../CSS/traveloffers.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,500,0,0" /> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
     <style>
         /*
         Josh's Custom CSS Reset
@@ -65,7 +65,7 @@
     <title>Travel Offers | Generic Travel Agency</title>
 </head>
 
-<body>
+<body onload="checkSignedinOrNot()">
     <header>
         <div class="logo">
             <a href="../index.html">
@@ -252,11 +252,13 @@
     <div class="offers-title">
         <p>Hotel Offers</p>
     </div>
+
     <div class="offers-slider">
-        <button class="os-prev"></button>
-        <div class="os-container">
-            <div class="os-card">
-                <img class="os-card-img" src="" alt="">
+        <button id="hOprev" class="os-prev"></button>
+        <button id="hOnext" class="os-next"></button>
+        <div id="hoteloffers" class="os-container">
+            <div class="hOcards os-card">
+                <img class="os-card-img" src="../IMG/img29.webp" alt="">
                 <div class="os-card-desc">
                     <a href="#">Windy Peaks</a>
                     <ul>
@@ -272,8 +274,8 @@
                     <button>Book</button>
                 </div>
             </div>
-            <div class="os-card">
-                <img class="os-card-img" src="" alt="">
+            <div class="hOcards os-card">
+                <img class="os-card-img" src="../IMG/img29.webp" alt="">
                 <div class="os-card-desc">
                     <a href="#">Windy Peaks</a>
                     <ul>
@@ -289,8 +291,8 @@
                     <button>Book</button>
                 </div>
             </div>
-            <div class="os-card">
-                <img class="os-card-img" src="" alt="">
+            <div class="hOcards os-card">
+                <img class="os-card-img" src="../IMG/img29.webp" alt="">
                 <div class="os-card-desc">
                     <a href="#">Windy Peaks</a>
                     <ul>
@@ -306,8 +308,58 @@
                     <button>Book</button>
                 </div>
             </div>
-        </div>
-        <button class="os-next"></button>
+            <div class="hOcards os-card">
+                <img class="os-card-img" src="../IMG/img29.webp" alt="">
+                <div class="os-card-desc">
+                    <a href="#">Windy Peaks</a>
+                    <ul>
+                        <li>First thing here</li>
+                        <li>Second thing here</li>
+                        <li>Third thing here</li>
+                    </ul>
+                </div>
+                <div class="os-card-price">
+                    <p>100VND/night</p>
+                </div>
+                <div class="os-card-action">
+                    <button>Book</button>
+                </div>
+            </div>
+            <div class="hOcards os-card">
+                <img class="os-card-img" src="../IMG/img29.webp" alt="">
+                <div class="os-card-desc">
+                    <a href="#">Windy Peaks</a>
+                    <ul>
+                        <li>First thing here</li>
+                        <li>Second thing here</li>
+                        <li>Third thing here</li>
+                    </ul>
+                </div>
+                <div class="os-card-price">
+                    <p>100VND/night</p>
+                </div>
+                <div class="os-card-action">
+                    <button>Book</button>
+                </div>
+            </div>
+            <div class="hOcards os-card">
+                <img class="os-card-img" src="../IMG/img29.webp" alt="">
+                <div class="os-card-desc">
+                    <a href="#">Windy Peaks</a>
+                    <ul>
+                        <li>First thing here</li>
+                        <li>Second thing here</li>
+                        <li>Third thing here</li>
+                    </ul>
+                </div>
+                <div class="os-card-price">
+                    <p>100VND/night</p>
+                </div>
+                <div class="os-card-action">
+                    <button>Book</button>
+                </div>
+            </div>
+        </div>       
     </div>
     <div class="offers-title">
         <p>Restaurant Offers</p>
@@ -316,7 +368,7 @@
         <button class="os-prev"></button>
         <div class="os-container">
             <div class="os-card">
-                <img class="os-card-img" src="" alt="">
+                <img class="os-card-img" src="../IMG/img29.webp" alt="">
                 <div class="os-card-desc">
                     <a href="#">Windy Peaks</a>
                     <ul>
@@ -333,7 +385,7 @@
                 </div>
             </div>
             <div class="os-card">
-                <img class="os-card-img" src="" alt="">
+                <img class="os-card-img" src="../IMG/img29.webp" alt="">
                 <div class="os-card-desc">
                     <a href="#">Windy Peaks</a>
                     <ul>
@@ -350,7 +402,7 @@
                 </div>
             </div>
             <div class="os-card">
-                <img class="os-card-img" src="" alt="">
+                <img class="os-card-img" src="../IMG/img29.webp" alt="">
                 <div class="os-card-desc">
                     <a href="#">Windy Peaks</a>
                     <ul>
@@ -424,6 +476,17 @@
         </div>
     </footer>
     <script src="../JS/traveloffers.js"></script>
+    <script>
+        function checkSignedinOrNot(){
+            var LSSignedInStatus = localStorage.getItem("SignedInStatus");
+            var SSSignedInStatus = sessionStorage.getItem("SignedInStatus");
+
+            if (LSSignedInStatus === "true" || SSSignedInStatus === "true") {
+                signedin.classList.toggle("hidden");
+                signedout.classList.toggle("hidden");
+            } else {};
+        }
+    </script>
 </body>
 
 </html>
