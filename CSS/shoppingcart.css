@@ -245,29 +245,95 @@ body {
     padding: 2%;
   }
 
-  .container-header {
-    width: 60vw;
+  .container__header {
+    width: 70vw;
     display: grid;
-    grid-template-columns: 5fr 14vh;
+    grid-template-columns: 100%;
     grid-template-rows: 10vh 4vh;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    padding: 20px 50px;
-    border-top: 1px solid #1c1b1f;
-    border-right: 1px solid #1c1b1f;
-    border-left: 1px solid #1c1b1f;
-    border-radius: 20px 20px 0 0;
   }
 
-  .ch-title {
+  .container__header--title {
     grid-area: 1 / 1 / 2 / 2;
     font-family: 'degular_display_demo', sans-serif;
     font-size: 4.5em;
     font-weight: 700;
+    color: #1c1b1f;
   }
 
-  .shoppingcartid {
+  .shopping-cart-id {
     grid-area: 2 / 1 / 3 / 2;
     font-family: 'degular_mono_demo', monospace;
     font-size: 1em;
-  } 
+    color: #1c1b1fb0;
+  }
+
+  .container__header--logo {
+    grid-area: 1 / 2 / 3 / 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .container__body--hr {
+    width: 70vw;
+    border: .5px solid #1c1b1f7e;
+    margin: 20px 0 20px 0;
+  }
+
+  .container__body--container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 90% 10%;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+
+  .container__body--items {
+    grid-area: 1 / 1 / 3 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container__body--item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 8vh repeat(3, 1fr) 5vw;
+    grid-template-rows: 5vh 3vh;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .container__body--item-img {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+
+  .container__body--item-title {
+    grid-area: 1 / 2 / 2 / 5;
+  }
+
+  .container__body--item-amount {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .container__body--item-price {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+
+  .container__body--item-amount_total {
+    grid-area: 2 / 4 / 3 / 5;
+  }
+
+  .container__body--item-remove {
+    grid-area: 1 / 5 / 3 / 6;
+  }
+
+  .container__body--reciept {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .container__body--checkout {
+    grid-area: 2 / 2 / 3 / 3;
+  }
