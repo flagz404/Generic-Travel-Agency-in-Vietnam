@@ -121,17 +121,89 @@
             <div class="container__body--container">
                 <div class="container__body--items">
                     <div class="container__body--item">
-                        <img class="container__body--item-img" src="" alt="">
+                        <img class="container__body--item-img" src="../IMG/img29.webp" alt="">
                         <h3 class="container__body--item-title">Windy Peaks</h3>
                         <p class="container__body--item-amount">1 person - 10 nights</p>
-                        <p class="container__body--item-price">300.000VND/night</p>
-                        <p class="container__body--item-amount_total">3.000.000VND</p>
+                        <p class="container__body--item-price">300 000 VND/night</p>
+                        <p class="container__body--item-amount_total">3 000 000 VND</p>
                         <button class="container__body--item-remove"></button>
                     </div>
+                    <hr class="container__body--item-hr">
+                    <div class="container__body--item">
+                        <img class="container__body--item-img" src="../IMG/img29.webp" alt="">
+                        <h3 class="container__body--item-title">Windy Peaks</h3>
+                        <p class="container__body--item-amount">1 person - 10 nights</p>
+                        <p class="container__body--item-price">300 000 VND/night</p>
+                        <p class="container__body--item-amount_total">3 000 000 VND</p>
+                        <button rel="js-item-remove" class="container__body--item-remove"></button>
+                    </div>
                 </div>
-                <div class="container__body--reciept"></div>
+                <div class="container__body--reciept">
+                    <div class="receipt">
+                        <div class="receipt__list">
+                            <div class="receipt__list-header">
+                                <h2 class="receipt__list-title">Order Reciept</h2>
+                                <p class="receipt__id">#<span>10F00J0-AG-99</span></p>
+                                <p class="receipt__text">Generic Travel Agency in Vietnam</p>
+                                <p class="receipt__text--bottom"><span rel="js-receipt-date">DD</span>/<span rel="js-receipt-month">MM</span>/<span rel="js-receipt-year">YYYY</span> <span rel="js-receipt-seconds">00</span>:<span rel="js-receipt-minutes">00</span>:<span rel="js-receipt-hours">00</span></p>
+                                <div class="receipt__payment">
+                                    <div class="receipt__payment--accept">
+                                        <p>We accept: </p>
+                                        <div class="receipt__payment--types">
+                                            <div class="receipt__payment--type master">
+                                                <img src="../IMG/mc_symbol.svg" alt="Mastercard">
+                                            </div>
+                                            <div class="receipt__payment--type visa">
+                                                <img src="../IMG/Visa_Brandmark_Blue_RGB_2021.png" alt="Visa">
+                                            </div>
+                                            <div class="receipt__payment--type">
+                                                <img class="paypal" src="../IMG/PayPal_Monogram_Full_Color_RGB.png" alt="Paypal">
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <input class="receipt__payment--cardholder" type="text" placeholder="Cardholder's Name">
+                                    <input class="receipt__payment--cardnum" type="text" placeholder="Card Number">
+                                    <input class="receipt__payment--cardexp" type="text" placeholder="Expiration">
+                                    <input class="receipt__payment--cardcvv" type="text" placeholder="CVV">
+                                </div>
+                                <span class="receipt__discount">Discount Code: <input type="text" class="receipt__discount--input"></span>
+                            </div>
+                            <div class="receipt__list-body">
+                                <div class="receipt__grid">
+                                    <div class="receipt__grid--categories">
+                                        <p class="receipt__grid--categories-item">ITEM</p>
+                                        <p class="receipt__grid--categories-desc">DESCRIPTION</p>
+                                        <p class="receipt__grid--categories-cost">COST</p>
+                                    </div>
+                                    <div class="receipt__grid--item">
+                                        <p class="receipt__grid--item-item">1908</p>
+                                        <p class="receipt__grid--item-desc">WINDY PEAKS - 10 NIGHTS</p>
+                                        <p class="receipt__grid--item-cost">3 000 000 VND</p>
+                                    </div>
+                                    <div class="receipt__grid--item">
+                                        <p class="receipt__grid--item-item">1908</p>
+                                        <p class="receipt__grid--item-desc">WINDY PEAKS - 10 NIGHTS</p>
+                                        <p class="receipt__grid--item-cost">3 000 000 VND</p>
+                                    </div>
+                                    <div class="receipt__grid--item">
+                                        <p class="receipt__grid--item-item">SALE</p>
+                                        <p class="receipt__grid--item-desc">100% DISCOUNT</p>
+                                        <p class="receipt__grid--item-cost">-3 000 000 VND</p>
+                                    </div>
+                                    <div class="receipt__grid--total">
+                                        <p class="receipt__grid--item-item">ORDER TOTAL:</p>
+                                        <p class="receipt__grid--item-cost">FREE</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="receipt__list-footer">
+                                <button class="container__body--checkout-btn">PAY NOW</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="container__body--checkout">
-                    <button class="container__body--checkout-btn">Checkout</button>
+                    <!-- <button class="container__body--checkout-btn">Checkout</button> -->
                 </div>
             </div>
         </div>
