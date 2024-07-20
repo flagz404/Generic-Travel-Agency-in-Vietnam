@@ -668,4 +668,14 @@ footer {
   width: 100%;
   text-align: left;
   cursor: pointer;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #1c1b1f;
+  background-color: transparent;
+  transition: 0.1s;
+}
+
+.container__body--checkout-btn:hover {
+  background-color: #1c1b1f;
+  color: #fff;
 }
